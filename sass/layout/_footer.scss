@@ -1,0 +1,25 @@
+footer {
+    background-color: $primary-color;
+    @include flexCenter(column);
+    height: 200px;
+    margin-top: 3em;
+
+    & h2 {
+        margin: 0;
+    }
+}
+
+.footer_nav {
+    @include flex(row, space-between, baseline);
+    width: 20%;
+}
+
+.footer_nav i {
+   color: $secondary-color;
+   font-size: $main-title;
+}
+
+.footer_nav a {
+    @include flex(column, center, center);
+    color: $tertiary-color;
+}

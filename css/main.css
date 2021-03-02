@@ -81,4 +81,38 @@ header {
   color: #3c0b69;
   line-height: 2em;
   margin-top: 1em;
+}
+
+footer {
+  background-color: #f3e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  margin-top: 3em;
+}
+footer h2 {
+  margin: 0;
+}
+
+.footer_nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 20%;
+}
+
+.footer_nav i {
+  color: #9a02a8;
+  font-size: 40px;
+}
+
+.footer_nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #3c0b69;
 }/*# sourceMappingURL=main.css.map */
