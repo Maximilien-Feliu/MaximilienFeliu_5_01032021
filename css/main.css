@@ -1,0 +1,84 @@
+.font_header {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 40px;
+}
+.font_header-smaller {
+  font-size: 16px;
+}
+.font_lighter {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 300;
+  height: 100%;
+}
+
+.shadow {
+  box-shadow: #d8d8d8 2px 5px 8px, -2px 5px 8px #d8d8d8;
+}
+
+strong {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  background-color: #f3e8f0;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_brand_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1.3em;
+}
+.header_brand_description h1 {
+  margin-bottom: 0;
+}
+.header_brand_description p {
+  margin-top: 0;
+}
+.header_nav {
+  margin-right: 1.5em;
+}
+.header_nav i {
+  font-size: 30px;
+  color: #9a02a8;
+}
+.header_nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #3c0b69;
+  line-height: 2em;
+  margin-top: 1em;
+}/*# sourceMappingURL=main.css.map */

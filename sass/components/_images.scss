@@ -1,0 +1,19 @@
+@mixin squareCardImg{
+    img{
+        width: 100%;
+        height: 70%;
+        margin-bottom: 0px;
+        padding: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+@mixin imgFullCover{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    } 
+}

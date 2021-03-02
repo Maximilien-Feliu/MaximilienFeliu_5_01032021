@@ -1,0 +1,14 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: $normal-size;
+    font-weight: $normal-weight;
+    height: 100%; 
+}
+
+.shadow{
+    box-shadow: $shadow;
+}
+
+strong {
+    font-weight: $normal-weight;
+}

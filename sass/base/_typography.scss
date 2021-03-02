@@ -1,0 +1,28 @@
+// font-size //
+$normal-size: 16px;
+$main-title: 40px; 
+
+// font-weight //
+$normal-weight: 300;
+$max-bold: 900;
+$max-thin: 100;
+
+.font{
+    
+    &_header {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: $main-title;
+        
+        &-smaller {
+            font-size: $normal-size;
+        }
+    }
+
+    &_lighter {
+        font-weight: $normal-weight;
+    }
+}
+
+.bold{
+    font-weight: $max-bold;
+}

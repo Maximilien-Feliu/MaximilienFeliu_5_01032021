@@ -1,0 +1,36 @@
+header {
+    background-color: $primary-color;
+    height: 100px;
+    @include flex(row, space-between, center);
+}
+
+.header {
+    &_brand_logo { 
+        @include flex(row, flex-start, center);
+        margin-left: 1.3em;
+    }
+
+    &_brand_description h1 {
+        margin-bottom: 0;
+    }
+
+    &_brand_description p {
+        margin-top: 0;
+    }
+
+    &_nav {
+        margin-right: 1.5em;
+    }
+
+    &_nav i {
+        font-size: 30px;
+        color: $secondary-color;
+    }
+
+    &_nav a {
+        @include flex(column, center, center);
+        color: $tertiary-color;
+        line-height: 2em;
+        margin-top: 1em;
+    }
+} 

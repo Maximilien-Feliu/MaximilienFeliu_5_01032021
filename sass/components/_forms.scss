@@ -1,0 +1,16 @@
+// input //
+@mixin inputStyle($input) {
+    outline: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+
+    @if $input != $white{
+        background-color: darken($input, 5%);
+
+        &::placeholder{
+            color: rgb(73, 73, 73);
+            padding-left: 11px;
+        }
+    }
+}
