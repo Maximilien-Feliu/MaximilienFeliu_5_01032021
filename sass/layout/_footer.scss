@@ -21,5 +21,4 @@ footer {
 
 .footer_nav a {
     @include flex(column, center, center);
-    color: $tertiary-color;
 }

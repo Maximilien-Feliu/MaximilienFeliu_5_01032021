@@ -1,0 +1,7 @@
+.filters_show {
+    @include flex(row, flex-start, baseline);
+}
+
+#filters_hidden {
+    display: none;
+}
