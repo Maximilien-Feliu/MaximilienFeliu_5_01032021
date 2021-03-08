@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oricamera : Vente en ligne de caméras vintage</title>
-    <meta name="description" content="Orinocamera est un site e-commerce spécialisé dans la vente de caméras vintage en ligne. Revivez le charme de l'époque en prenant des photos uniques provenant de nos caméras issues de technologies anciennes. Vous pouvez personnaliser la lentille de chaque caméra vintage pour plus d'authenticité." />
+    <meta name="description" content="Oricamera est un site e-commerce spécialisé dans la vente de caméras vintage en ligne. Revivez le charme de l'époque en prenant des photos uniques provenant de nos caméras issues de technologies anciennes. Vous pouvez personnaliser la lentille de chaque caméra vintage pour plus d'authenticité." />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/favicon-16x16.png">
     <link rel="stylesheet" href="css/main.css" />
     
     <script src="https://kit.fontawesome.com/3ec31e340a.js" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
 </head>
 <body>
     <header>
@@ -29,7 +28,7 @@
     </header>
 
     <main>
-        <section>
+        <section id="products">
             <div class="title_filters">
                 <h2>Nos caméras vintage</h2>
 
@@ -48,18 +47,23 @@
                 </div>
 
             </div>
+
+            <div id="products_container"></div>
+
         </section>
     </main>
 
     <footer>
         <h2 class="font_header font_lighter">Oricamera</h2>
-        <nav class="footer_nav">
+        <nav class="footer_nav_icons">
             <a href="https://github.com/Maximilien-Feliu/MaximilienFeliu_5_01032021"><i class="fab fa-github"></i>Github</a>
             <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i>Facebook</a>
             <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter-square"></i>Twitter</a>
             <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i>Instagram</a>
         </nav>
     </footer>
-    
+
+    <script src="js/main.js"></script>
+    <script src="./js/products_list.js"></script>
 </body>
 </html>

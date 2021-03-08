@@ -9,17 +9,69 @@
     border-radius: $radius;
 }
 
-@mixin squareCard{
+@mixin verticalCard{
     background-color: $white;
     width: 100%;
+    max-width: 250px;
     height: 250px;
-    border-radius: 10px;
-    margin-top: 2em;
-
-    @include respond-to(handhelds){
-        width: 40%;
-        margin-top: 0;
-        margin-bottom: 4em;
+    
+    h3 {
+        margin-top: 0.4em;
     }
 }
+
+#products_container {
+    width: 100%;
+    margin-top: 2em;
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+}
+
+.product {
+    &_card {
+        @include verticalCard;
+        @include verticalCardImg;
+        height: 100%;
+        margin-left: 1em;
+        border-top: 1px solid rgba(194, 194, 194, 0.363);
+        position: relative;
+        transition: .5s;
+
+        img {
+            width: 95%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            margin-top: 2.5%;
+        }
+    }
+
+    &_description_container {
+        margin-left: 0.5em;
+    }
+
+    &_price {
+        padding-bottom: 0.5em;
+    }
+
+    &_hover {
+        @include flexCenter(row);
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.658);
+        color: white;
+        font-size: 24px;
+    }
+}
+
+#products_container a {
+    margin-top: 2em;
+    margin-right: 2em;
+    height: 100%;
+}
+
+
+
+
 

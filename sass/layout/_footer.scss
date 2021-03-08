@@ -9,16 +9,16 @@ footer {
     }
 }
 
-.footer_nav {
+.footer_nav_icons {
     @include flex(row, space-between, baseline);
-    width: 20%;
+    width: 25em;   
 }
 
-.footer_nav i {
+.footer_nav_icons i {
    color: $secondary-color;
    font-size: $main-title;
 }
 
-.footer_nav a {
+.footer_nav_icons a {
     @include flex(column, center, center);
 }
