@@ -1,10 +1,10 @@
 class Cards {
 
-    //create a product Card in inedx.html
-    async createCard (imgURL, cardTitle, cardDescription, cardPrice, imgAlt) {
+    //create a product Card 
+    async createCard (selectedId, linkHref, imgURL, cardTitle, cardDescription, cardPrice, imgAlt) {
 
-        //set all variables needing to create the card metas in index.html
-        var productsContainer = document.getElementById('products_container');
+        //set all variables needed to create the card metas
+        var productsContainer = document.getElementById(selectedId);
         var newLink = document.createElement('a');
         var newDivContainer = document.createElement('div');
         var newDescriptionContainer = document.createElement('div');
@@ -13,8 +13,8 @@ class Cards {
         var newDescription = document.createElement('p');
         var newPrice = document.createElement('p');
         
-        //create the product card in index.html
-        productsContainer.appendChild(newLink).href = './html/product.html';
+        //create the product card
+        productsContainer.appendChild(newLink).href = linkHref;
         newLink.className = 'product_link';
         newLink.appendChild(newDivContainer).appendChild(newImg).alt = imgAlt;
         newDivContainer.className = 'product_card shadow';
@@ -30,11 +30,11 @@ class Cards {
     }
 
     //fulfill the product card with the elements needed for
-    async fillCard (method, url, boolean, imgAlt) { 
+    async fillCard (selectedId, linkHref, method, url, boolean, imgAlt) { 
         let httpRequest = await getHttpRequest(method, url, boolean);
         
         for (let i = 0; i < httpRequest.length; i++) {
-            this.createCard(httpRequest[i].imageUrl, httpRequest[i].name, httpRequest[i].description, httpRequest[i].price, imgAlt);
+            this.createCard(selectedId, linkHref, httpRequest[i].imageUrl, httpRequest[i].name, httpRequest[i].description, httpRequest[i].price, imgAlt);
         }
     }
 
@@ -55,8 +55,5 @@ class Cards {
 
 }
 
-let card = new Cards; 
-card.fillCard('GET', 'http://localhost:3000/api/cameras', true, 'image d\'une caméra vintage');
-card.animCardHover('products_container', 'mouseover', 'div.product_card');
 
 
