@@ -1,5 +1,12 @@
+const urlParams = new URLSearchParams(window.location.search);
+let productId = urlParams.get('id');
+
+if (productId == null) {
+    productId = '';
+}
+
 function getHttpRequest (method, url, boolean) {
-         
+
     return new Promise(function (resolve, reject) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -15,5 +22,6 @@ function getHttpRequest (method, url, boolean) {
         request.send();  
     })
 }
+
 
 
