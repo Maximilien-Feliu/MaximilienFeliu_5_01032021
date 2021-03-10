@@ -15,7 +15,7 @@ class Cards {
         
         //create the card
         productsContainer.appendChild(newLink).href = linkHref;
-        newLink.className = 'product_link';
+        newLink.className = 'product_link'; 
         newLink.appendChild(newDivContainer).appendChild(newImg).alt = imgAlt;
         newDivContainer.className = 'product_card shadow';
         newImg.src = imgURL;
@@ -26,6 +26,10 @@ class Cards {
         newDescription.innerHTML = cardDescription;
         newDescriptionContainer.appendChild(newPrice).className = 'product_price bold';
         newPrice.innerHTML = cardPrice / 100 + ' &euro;';
+
+        if (productId != '') {
+            this.cardById();
+        }
         
     }
 
@@ -35,12 +39,16 @@ class Cards {
       
         if (productId == '') {
 
+            //Here enter what you whant to loop in htppRequest
             for (let i = 0; i < httpRequest.length; i++) {
                 this.createCard(selectedId, httpRequest[i].imageUrl, httpRequest[i].name, httpRequest[i].description, httpRequest[i].price, imgAlt, linkHref + httpRequest[i]._id);
-        }    
+
+            }    
+            
         }else {
 
             this.createCard(selectedId, httpRequest.imageUrl, httpRequest.name, httpRequest.description, httpRequest.price, imgAlt, linkHref + httpRequest._id)
+        
         } 
 
     }
@@ -48,7 +56,7 @@ class Cards {
     //card get darken when the user's mouse is over it
     animCardHover (containerId, animationAction, classNameSelected) {
         const cardHover = document.getElementById(containerId);
-        var newDivHover = document.createElement('div');          
+        let newDivHover = document.createElement('div');          
     
         cardHover.addEventListener(animationAction, (e) => {
             //we do an event delegation (because of dynamic elements)
@@ -61,7 +69,28 @@ class Cards {
 
     }
 
-    
+    cardById () {
+         
+        let newLink = document.getElementsByClassName('product_link')[0];
+        let newDivContainer = document.getElementsByClassName('product_card')[0]; 
+        let newDivDescriptionContainer = document.getElementsByClassName('product_description_container')[0];
+        let newDiv = document.createElement('div');
+        let newBtn = document.createElement('button');
+        let newLabel = document.createElement('label');
+        let newSelect = document.createElement('select');
+        let newOption = document.createElement('option'); 
+            
+        newLink.replaceWith(newDivContainer);
+        newDivContainer.classList.add('product_card--id');
+        newDivDescriptionContainer.appendChild(newDiv).className = 'select_btn';
+        newDiv.appendChild(newSelect).id = 'lenses_select';
+        newSelect.name = 'lenses';
+        newSelect.appendChild(newOption).innerHTML = '--choisissez votre lentille--';  
+        newDiv.appendChild(newBtn).className = 'btn';
+        newBtn.innerHTML = 'Ajouter au panier'; 
+
+    }
+
 }
 
 
