@@ -98,6 +98,7 @@ strong {
 
 .product_card--id img {
   width: 500px;
+  height: 320px;
   margin: 0;
 }
 
@@ -161,6 +162,11 @@ strong {
 a {
   text-decoration: none;
   color: black;
+  transition: .5s;
+}
+
+a:hover {
+  color: #9a02a8;
 }
 
 button {

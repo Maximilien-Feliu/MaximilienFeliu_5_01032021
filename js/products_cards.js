@@ -44,9 +44,7 @@ class Cards {
         }else {
 
             this.createCard(selectedId, httpRequest.imageUrl, httpRequest.name, httpRequest.description, httpRequest.price, imgAlt, linkHref + httpRequest._id);
-
             this.cardById();
-
             this.addLenses(method, url, boolean);
         
         } 
