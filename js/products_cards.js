@@ -26,10 +26,6 @@ class Cards {
         newDescription.innerHTML = cardDescription;
         newDescriptionContainer.appendChild(newPrice).className = 'product_price bold';
         newPrice.innerHTML = cardPrice / 100 + ' &euro;';
-
-        if (productId != '') {
-            this.cardById();
-        }
         
     }
 
@@ -47,10 +43,31 @@ class Cards {
             
         }else {
 
-            this.createCard(selectedId, httpRequest.imageUrl, httpRequest.name, httpRequest.description, httpRequest.price, imgAlt, linkHref + httpRequest._id)
+            this.createCard(selectedId, httpRequest.imageUrl, httpRequest.name, httpRequest.description, httpRequest.price, imgAlt, linkHref + httpRequest._id);
+
+            this.cardById();
+
+            this.addLenses(method, url, boolean);
         
         } 
 
+    }
+
+    //Add lenses to the select options
+    async addLenses (method, url, boolean) {
+
+        let httpRequest = await getHttpRequest(method, url, boolean);
+        
+        for (let i = 0; i < httpRequest.lenses.length; i++) {
+               
+            let selectOptions = document.getElementById('lenses_select');
+            let newOption = document.createElement('option');
+
+            selectOptions.appendChild(newOption)[i];
+            newOption.innerHTML = httpRequest.lenses[i];
+
+
+        }   
     }
 
     //card get darken when the user's mouse is over it
@@ -71,6 +88,7 @@ class Cards {
 
     cardById () {
          
+        //catch classes to modify and create elements
         let newLink = document.getElementsByClassName('product_link')[0];
         let newDivContainer = document.getElementsByClassName('product_card')[0]; 
         let newDivDescriptionContainer = document.getElementsByClassName('product_description_container')[0];
@@ -80,8 +98,12 @@ class Cards {
         let newSelect = document.createElement('select');
         let newOption = document.createElement('option'); 
             
+        //create the product card
         newLink.replaceWith(newDivContainer);
         newDivContainer.classList.add('product_card--id');
+        newDivDescriptionContainer.appendChild(newLabel).setAttribute('for', 'lenses');
+        newLabel.className = 'lenses_label';
+        newLabel.innerHTML = 'Choisissez votre lentille : '
         newDivDescriptionContainer.appendChild(newDiv).className = 'select_btn';
         newDiv.appendChild(newSelect).id = 'lenses_select';
         newSelect.name = 'lenses';
