@@ -39,6 +39,7 @@ header {
         }
 
         &_cart_number {
+            font-family: 'Times New Roman', Times, serif;
             position: absolute;
             @include flexCenter(column);
             top: -12px;
@@ -48,12 +49,12 @@ header {
             border-radius: 100%;
             background-color: $primary-color;
             color: $white;
+            display: none;
+            transform: translateX(-100px) translateY(50px) scale(0);
+            animation: numberAppear 1.5s ease-in-out both;
         }
-
 
     }
 
-    
-
-    
 } 
+

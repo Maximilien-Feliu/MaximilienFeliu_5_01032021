@@ -257,6 +257,7 @@ header {
 }
 
 .header_nav_cart_number {
+  font-family: 'Times New Roman', Times, serif;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -269,6 +270,9 @@ header {
   border-radius: 100%;
   background-color: rgba(189, 101, 29, 0.822);
   color: #fff;
+  display: none;
+  transform: translateX(-100px) translateY(50px) scale(0);
+  animation: numberAppear 1.5s ease-in-out both;
 }
 
 footer {
@@ -315,5 +319,17 @@ footer h2 {
   justify-content: space-between;
   align-items: center;
   margin-top: 3em;
+}
+
+@keyframes numberAppear {
+  0% {
+    transform: translateX(-100px) translateY(50px) scale(0);
+  }
+  30% {
+    transform: translateX(-100px) translateY(50px) scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 /*# sourceMappingURL=main.css.map */

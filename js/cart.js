@@ -1,4 +1,6 @@
 class Cart {
+
+    //add a Number on the shopping cart icon on every click
     async addToCart (method, url, boolean) {
         let httpRequest = await getHttpRequest(method, url, boolean);
         let btnForCart = document.getElementsByClassName('btn_add-cart');
@@ -6,10 +8,12 @@ class Cart {
         for (let i = 0; i < btnForCart.length; i++) {
             btnForCart[i].addEventListener('click', () => {
                 this.numberInCart();
+                this.numberAppear();
             })
         }
     }
 
+    //Transform the value to a number then set in localStorage
     numberInCart() {
         let productCount = localStorage.getItem('productInCart');
         let cartIcon = document.getElementsByClassName('header_nav_cart_number')[0];
@@ -26,4 +30,20 @@ class Cart {
         
         }
     }
+
+    //Make the number appear for the css animation
+    numberAppear () {
+        document.getElementsByClassName('header_nav_cart_number')[0].style.display = 'flex';
+    }
+
+    //Number stay even after refresh
+    numberInCartOnLoad () {
+        let productCount = localStorage.getItem('productInCart');
+
+        if (productCount) {
+            document.getElementsByClassName('header_nav_cart_number')[0].textContent = productCount;
+            this.numberAppear();
+        }
+    }
+
 }
