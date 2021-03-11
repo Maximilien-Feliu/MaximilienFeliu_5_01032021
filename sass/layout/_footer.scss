@@ -1,5 +1,5 @@
 footer {
-    background-color: $primary-color;
+    background-color: $background-color;
     @include flexCenter(column);
     height: 200px;
     margin-top: 3em;
@@ -15,8 +15,12 @@ footer {
 }
 
 .footer_nav_icons i {
-   color: $secondary-color;
+   color: $tertiary-color;
    font-size: $main-title;
+    
+   &:hover {
+       color: $secondary-color;
+   }
 }
 
 .footer_nav_icons a {

@@ -71,11 +71,11 @@
                 @include flex(row, space-between, baseline);
                 
                 .btn {
-                margin-right: 1.5em;
-                min-width: 150px;
-                box-shadow: -3px 3px 3px $secondary-color,
-                            3px -3px 3px $secondary-color;
-
+                    margin-right: 1.5em;
+                    min-width: 150px;
+                    box-shadow: -2px 2px 4px $tertiary-color,
+                                2px -2px 4px $tertiary-color; 
+                    background: linear-gradient($primary-color, $tertiary-color);
                 }
             }
 

@@ -121,7 +121,8 @@ strong {
 .product_card--id .select_btn .btn {
   margin-right: 1.5em;
   min-width: 150px;
-  box-shadow: -3px 3px 3px #9a02a8, 3px -3px 3px #9a02a8;
+  box-shadow: -2px 2px 4px #8721ca, 2px -2px 4px #8721ca;
+  background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
 }
 
 .product_card--id #lenses_select {
@@ -187,7 +188,7 @@ button:focus {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: #8721ca;
+  background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
   color: white;
 }
 
@@ -237,6 +238,11 @@ header {
 
 .header_nav i {
   font-size: 30px;
+  color: #8721ca;
+  transition: .5s;
+}
+
+.header_nav i:hover {
   color: #9a02a8;
 }
 
@@ -247,6 +253,22 @@ header {
   align-items: center;
   line-height: 2em;
   margin-top: 1em;
+  position: relative;
+}
+
+.header_nav_cart_number {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: -12px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: rgba(189, 101, 29, 0.822);
+  color: #fff;
 }
 
 footer {
@@ -272,8 +294,12 @@ footer h2 {
 }
 
 .footer_nav_icons i {
-  color: #9a02a8;
+  color: #8721ca;
   font-size: 40px;
+}
+
+.footer_nav_icons i:hover {
+  color: #9a02a8;
 }
 
 .footer_nav_icons a {

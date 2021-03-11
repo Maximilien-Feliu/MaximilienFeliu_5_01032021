@@ -1,5 +1,5 @@
 header {
-    background-color: $primary-color;
+    background-color: $background-color;
     height: 100px;
     @include flex(row, space-between, center);
 }
@@ -20,16 +20,40 @@ header {
 
     &_nav {
         margin-right: 1.5em;
+
+        & i {
+            font-size: 30px;
+            color: $tertiary-color;
+            transition: .5s;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+
+        & a {
+            @include flex(column, center, center);
+            line-height: 2em;
+            margin-top: 1em;
+            position: relative;
+        }
+
+        &_cart_number {
+            position: absolute;
+            @include flexCenter(column);
+            top: -12px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: $primary-color;
+            color: $white;
+        }
+
+
     }
 
-    &_nav i {
-        font-size: 30px;
-        color: $secondary-color;
-    }
+    
 
-    &_nav a {
-        @include flex(column, center, center);
-        line-height: 2em;
-        margin-top: 1em;
-    }
+    
 } 

@@ -46,7 +46,7 @@ class Cards {
             this.createCard(selectedId, httpRequest.imageUrl, httpRequest.name, httpRequest.description, httpRequest.price, imgAlt, linkHref + httpRequest._id);
             this.cardById();
             this.addLenses(method, url, boolean);
-        
+            
         } 
 
     }
@@ -63,7 +63,6 @@ class Cards {
 
             selectOptions.appendChild(newOption)[i];
             newOption.innerHTML = httpRequest.lenses[i];
-
 
         }   
     }
@@ -99,14 +98,14 @@ class Cards {
         //create the product card
         newLink.replaceWith(newDivContainer);
         newDivContainer.classList.add('product_card--id');
-        newDivDescriptionContainer.appendChild(newLabel).setAttribute('for', 'lenses');
+        newDivDescriptionContainer.appendChild(newLabel).setAttribute('for', 'lenses_select');
         newLabel.className = 'lenses_label';
         newLabel.innerHTML = 'Choisissez votre lentille : '
         newDivDescriptionContainer.appendChild(newDiv).className = 'select_btn';
         newDiv.appendChild(newSelect).id = 'lenses_select';
         newSelect.name = 'lenses';
         newSelect.appendChild(newOption).innerHTML = '--choisissez votre lentille--';  
-        newDiv.appendChild(newBtn).className = 'btn';
+        newDiv.appendChild(newBtn).className = 'btn btn_add-cart';
         newBtn.innerHTML = 'Ajouter au panier'; 
 
     }

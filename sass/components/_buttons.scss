@@ -16,7 +16,7 @@ button{
 .btn {
     @include btnStyle;
     @include flexCenter(row);
-    background-color: $tertiary-color;
+    background: linear-gradient($primary-color, $tertiary-color);
     color: white;
 }
 
