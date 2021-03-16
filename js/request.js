@@ -1,11 +1,4 @@
-const urlParams = new URLSearchParams(window.location.search);
-let productId = urlParams.get('id');
-
-if (productId == null) {
-    productId = '';
-}
-
-function getHttpRequest (method, url, boolean) {
+function getHttpRequest (method, url, boolean, productId = null) {
 
     return new Promise(function (resolve, reject) {
         var request = new XMLHttpRequest();
@@ -18,8 +11,14 @@ function getHttpRequest (method, url, boolean) {
             }
         };
 
-        request.open(method, url, boolean);        
-        request.send();  
+        if (productId == null) {
+            request.open(method, url, boolean);        
+              
+        } else {
+            request.open(method, url + productId, boolean);
+        }
+        
+        request.send();
     })
 }
 

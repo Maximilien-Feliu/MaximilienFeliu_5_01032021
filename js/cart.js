@@ -1,20 +1,22 @@
 class Cart {
 
     //add a Number on the shopping cart icon on every click
-    async addToCart (method, url, boolean) {
-        let httpRequest = await getHttpRequest(method, url, boolean);
+    addToCart (response) {
+       
         let btnForCart = document.getElementsByClassName('btn_add-cart');
         
         for (let i = 0; i < btnForCart.length; i++) {
             btnForCart[i].addEventListener('click', () => {
                 this.numberInCart();
                 this.numberAppear();
+                product.productsInCart(response);
             })
         }
     }
 
     //Transform the value to a number then set in localStorage
     numberInCart() {
+        
         let productCount = localStorage.getItem('productInCart');
         let cartIcon = document.getElementsByClassName('header_nav_cart_number')[0];
 
@@ -22,16 +24,16 @@ class Cart {
  
         if (productCount) {
             localStorage.setItem('productInCart', productCount + 1);
-            cartIcon.textContent = productCount + 1;
+            cartIcon.textContent = productCount + 1;     
 
         }else {
             localStorage.setItem('productInCart', 1);
             cartIcon.textContent = 1;
-        
         }
+       
     }
 
-    //Make the number appear for the css animation
+    // Make the cartIcon number appear
     numberAppear () {
         document.getElementsByClassName('header_nav_cart_number')[0].style.display = 'flex';
     }
@@ -45,5 +47,4 @@ class Cart {
             this.numberAppear();
         }
     }
-
 }

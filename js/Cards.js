@@ -30,39 +30,37 @@ class Cards {
     }
 
     //fulfill the product card with the elements needed for
-    async fillCard (selectedId, method, url, boolean, imgAlt, linkHref) { 
-        let httpRequest = await getHttpRequest(method, url, boolean);
-      
-        if (productId == '') {
+    fillCard (selectedId, response, imgAlt, linkHref) { 
+
+        if (Array.isArray(response)) {
 
             //Here enter what you whant to loop in htppRequest
-            for (let i = 0; i < httpRequest.length; i++) {
-                this.createCard(selectedId, httpRequest[i].imageUrl, httpRequest[i].name, httpRequest[i].description, httpRequest[i].price, imgAlt, linkHref + httpRequest[i]._id);
+            for (let i = 0; i < response.length; i++) {
+                this.createCard(selectedId, response[i].imageUrl, response[i].name, response[i].description, response[i].price, imgAlt, linkHref + response[i]._id);
 
             }    
             
         }else {
 
-            this.createCard(selectedId, httpRequest.imageUrl, httpRequest.name, httpRequest.description, httpRequest.price, imgAlt, linkHref + httpRequest._id);
+            this.createCard(selectedId, response.imageUrl, response.name, response.description, response.price, imgAlt, linkHref + response._id);
             this.cardById();
-            this.addLenses(method, url, boolean);
-            
+            this.addLensesToCard(response);
+
         } 
 
     }
 
     //Add lenses to the select options
-    async addLenses (method, url, boolean) {
-
-        let httpRequest = await getHttpRequest(method, url, boolean);
+    addLensesToCard (response) {
         
-        for (let i = 0; i < httpRequest.lenses.length; i++) {
+        for (let i = 0; i < response.lenses.length; i++) {
                
             let selectOptions = document.getElementById('lenses_select');
             let newOption = document.createElement('option');
+            newOption.className = 'lenses_option';
 
             selectOptions.appendChild(newOption)[i];
-            newOption.innerHTML = httpRequest.lenses[i];
+            newOption.innerHTML = response.lenses[i];
 
         }   
     }

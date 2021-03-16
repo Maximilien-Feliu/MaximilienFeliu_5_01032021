@@ -1,0 +1,12 @@
+@keyframes numberAppear {
+  0% {
+    transform: translateX(-100px) translateY(50px) scale(0);
+  }
+  30% {
+    transform: translateX(-100px) translateY(50px) scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*# sourceMappingURL=animations.css.map */
