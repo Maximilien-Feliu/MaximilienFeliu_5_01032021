@@ -9,7 +9,6 @@ class Products {
         let product = {
             img: response.imageUrl,
             title: response.name,
-            description: response.description,
             price: response.price / 100,
             lense: selectOption,
             quantity: 0,

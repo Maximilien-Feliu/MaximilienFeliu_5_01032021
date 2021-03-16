@@ -1,0 +1,7 @@
+.title_items {
+    @include flex(row, flex-start, baseline);
+}
+
+.items_number_in_cart {
+    margin-left: 3em;
+}
