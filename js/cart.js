@@ -47,4 +47,11 @@ class Cart {
             this.numberAppear();
         }
     }
+
+    // get the items from the local storage then transform it to an array
+    getItemsFromLocalStorage () {
+        let cartItems = JSON.parse(localStorage.getItem('product'));
+        let cartItemsArray = Object.values(cartItems);
+        console.log(cartItemsArray);
+    }
 }

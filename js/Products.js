@@ -18,7 +18,6 @@ class Products {
         // Search in the local storage if the 'product' key is already there 
         let productItem = localStorage.getItem('product');
         productItem = JSON.parse(productItem);
-        console.log(productItem);
         
         // add a value in the value if productItem is different of null and the title is undefined
         if(productItem != null) {
