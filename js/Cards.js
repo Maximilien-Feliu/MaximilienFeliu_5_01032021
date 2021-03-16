@@ -61,6 +61,7 @@ class Cards {
 
             selectOptions.appendChild(newOption)[i];
             newOption.innerHTML = response.lenses[i];
+            newOption.value = 'lense' + i;
 
         }   
     }
