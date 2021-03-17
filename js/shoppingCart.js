@@ -1,10 +1,10 @@
 let cart = new Cart;
 let product = new Products;
 
-let httpRequest = getHttpRequest('GET', 'http://localhost:3000/api/cameras/', true);
+let cartItems = JSON.parse(localStorage.getItem('product'));
+let cartItemsArray = Object.values(cartItems);
+console.log(cartItemsArray);
 
-httpRequest.then((response) => {
-    cart.addToCart(response);
-    cart.getItemsFromLocalStorage();
+    cart.fillCart();
     cart.numberInCartOnLoad();
-});
+

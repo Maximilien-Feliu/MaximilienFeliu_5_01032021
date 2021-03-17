@@ -5,3 +5,8 @@
 .items_number_in_cart {
     margin-left: 3em;
 }
+
+.item_container {
+    @include flex(row, space-between, baseline);
+
+}

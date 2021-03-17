@@ -48,10 +48,46 @@ class Cart {
         }
     }
 
-    // get the items from the local storage then transform it to an array
-    getItemsFromLocalStorage () {
-        let cartItems = JSON.parse(localStorage.getItem('product'));
-        let cartItemsArray = Object.values(cartItems);
-        console.log(cartItemsArray);
+    // fulfill the cart by items from localStorage
+    fillCart () {
+        
+        for (let i = 0; i < cartItemsArray.length; i++) {
+            this.itemPlaceInCart (cartItemsArray[i].img, cartItemsArray[i].title, cartItemsArray[i].lense, cartItemsArray[i].price, cartItemsArray[i].totalPrice);
+        }
+    }
+
+    // create HTML elements to fill up
+    itemPlaceInCart (imgUrl, itemName, itemLense, priceOne, priceTotal) {
+
+        let itemContainer = document.getElementById('items_in_cart');
+        let newDivDetails = document.createElement('div');
+        let newDivTitleDetails = document.createElement('div');
+        let newDivQtityContainer = document.createElement('div');
+        let itemRmv = document.createElement('button');
+        let itemPrice = document.createElement('div');
+        let itemPriceTotal = document.createElement('div');
+        let itemImg = document.createElement('img');
+        let itemTitle = document.createElement('h2');
+        let qtityLabel = document.createElement('label');
+        let qtitySelect = document.createElement('select');
+
+        itemContainer.appendChild(newDivDetails).className = 'item_container';
+        newDivDetails.appendChild(newDivTitleDetails).className = 'item_img_description';
+        newDivDetails.appendChild(newDivQtityContainer).className = 'item_select_quantity_container';
+        newDivDetails.appendChild(itemRmv).className = 'item_remove';
+        newDivDetails.appendChild(itemPrice).className = 'item_price';
+        newDivDetails.appendChild(itemPriceTotal).className = 'item_price--total';
+
+        newDivTitleDetails.appendChild(itemImg).src = imgUrl;
+        newDivTitleDetails.appendChild(itemTitle).innerHTML = itemName; 
+        itemTitle.innerHTML = itemLense;
+        newDivQtityContainer.appendChild(qtityLabel).setAttribute('for', 'item_select_quantity'); 
+        qtityLabel.innerHTML = 'Quantité : ';
+        newDivQtityContainer.appendChild(qtitySelect).className = 'item_select_quantity';
+        qtitySelect.name = 'item_select_quantity';
+        itemRmv.innerHTML = 'Supprimer';
+        itemPrice.innerHTML = priceOne; 
+        itemPriceTotal.innerHTML = priceTotal;
+
     }
 }
