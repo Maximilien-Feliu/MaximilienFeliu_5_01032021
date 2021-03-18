@@ -118,7 +118,7 @@ class Cart {
         if (cartItems) {
             for (let i = 0; i < cartItems.length; i++) {
                 base = base + cartItems[i].totalPrice;
-                totalPriceItem.innerHTML = base;
+                totalPriceItem.innerHTML = base + ' &euro;';
             }
         }
     }
