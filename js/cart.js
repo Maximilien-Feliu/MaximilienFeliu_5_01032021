@@ -30,7 +30,6 @@ class Cart {
             localStorage.setItem('productInCart', 1);
             cartIcon.textContent = 1;
         }
-       
     }
 
     // Make the cartIcon number appear
@@ -50,11 +49,10 @@ class Cart {
 
     // fulfill the cart by items from localStorage
     fillCart () {
-        
         if (cartItems) {
             for (let i = 0; i < cartItems.length; i++) {
                 this.itemPlaceInCart (cartItems[i].img, cartItems[i].title, cartItems[i].lense, cartItems[i].price, cartItems[i].totalPrice);
-                this.addItemsNumber ();
+                this.addItemsNumber ();   
             }
         }else {
             this.emptyBasket();
@@ -63,9 +61,11 @@ class Cart {
 
     // add number of items in cart
     addItemsNumber () {
+        let productCount = localStorage.getItem('productInCart');
         let itemsNumber = document.getElementById('items_number');
-        itemsNumber.innerHTML = cartItems.length;
+        itemsNumber.innerHTML = productCount;
     }
+
 
     // create HTML elements to fill up
     itemPlaceInCart (imgUrl, itemName, itemLense, priceOne, priceTotal) {
@@ -110,13 +110,26 @@ class Cart {
 
     }
 
+    // set the total amount in cart
+    totalPrice () {
+        let totalPriceItem = document.getElementsByClassName('item_price--total--all')[0];
+        console.log(cartItems);
+        let base = 0;
+        if (cartItems) {
+            for (let i = 0; i < cartItems.length; i++) {
+                base = base + cartItems[i].totalPrice;
+                totalPriceItem.innerHTML = base;
+            }
+        }
+    }
+
     //Indicate the empty basket and create a redirection to index.html 
     emptyBasket () {
         let emptyBasket = document.getElementById('items_in_cart');
         let noRecap = document.getElementById('shopping_cart_order');
         let redirection = document.createElement('a');
 
-        emptyBasket.innerHTML = 'Votre panier est vide, vous pouvez voir notre liste de produits ';
+        emptyBasket.innerHTML = 'Votre panier est vide, retrouvez notre liste de produits ';
         emptyBasket.style.fontSize = '20px';
         emptyBasket.style.marginTop = '2em';
         emptyBasket.appendChild(redirection).innerHTML = 'ici';

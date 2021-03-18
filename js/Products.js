@@ -1,5 +1,5 @@
 class Products {
-
+    
     productsInCart (response) {
 
         let lensesSelect = document.getElementById('lenses_select');
@@ -27,11 +27,8 @@ class Products {
                     [product.title]: product
                 }
             }
-
             productItem[product.title].quantity += 1;
-        }
-         else {
-             
+        } else {       
             product.quantity = 1;
             productItem = {
                 [product.title]: product

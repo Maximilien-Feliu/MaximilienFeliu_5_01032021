@@ -417,6 +417,10 @@ footer h2 {
   color: rgba(189, 101, 29, 0.822);
 }
 
+.item_price--total--all {
+  color: rgba(189, 101, 29, 0.822);
+}
+
 #items_order {
   display: flex;
   flex-direction: column;

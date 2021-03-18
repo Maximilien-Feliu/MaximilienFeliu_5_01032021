@@ -77,6 +77,10 @@
     color: $primary-color;
 }
 
+.item_price--total--all {
+    color: $primary-color;
+}
+
 #items_order {
     @include flex(column, space-around, center);
     width: 100%;

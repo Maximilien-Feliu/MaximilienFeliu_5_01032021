@@ -10,4 +10,5 @@ console.log(cartItems);
 
 cart.fillCart();
 cart.numberInCartOnLoad();
+cart.totalPrice();
 
