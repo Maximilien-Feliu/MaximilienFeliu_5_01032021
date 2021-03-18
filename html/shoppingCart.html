@@ -29,15 +29,24 @@
         </nav>
     </header>
 
-    <main>
+    <main id="shopping_cart">
         <section id="shopping_cart_details">
-            <div class="title_items">
+            
+            <div class="title_items_number">
                 <h2>Mon panier</h2>
                 <div class="items_number_in_cart">( <span id="items_number">0</span> articles )</div>
             </div>
 
             <div id="items_in_cart"></div>
             
+        </section>
+
+        <section id="shopping_cart_order">            
+            <h2>Récapitulatif</h2>
+            <div id="items_order">
+                <p class="bold">Montant Total : <span class="item_price--total bold">0 &euro;</span></p>
+                <button class="btn">Commander</button>
+            </div>
         </section>
     </main>
 
