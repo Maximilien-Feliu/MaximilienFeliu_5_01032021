@@ -342,6 +342,25 @@ footer h2 {
   width: 70%;
 }
 
+#shopping_cart_customer {
+  margin-left: 20%;
+}
+
+#order_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#order_form label {
+  margin-top: 1em;
+}
+
+#order_form #cart_btns {
+  margin-top: 1em;
+}
+
 .title_items_number {
   display: flex;
   flex-direction: row;

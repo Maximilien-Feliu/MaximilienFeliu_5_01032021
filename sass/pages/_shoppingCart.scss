@@ -16,6 +16,22 @@
     width: 70%;
 }
 
+#shopping_cart_customer {
+    margin-left: 20%;
+}
+
+#order_form {
+    @include flex(column, flex-start, flex-start);
+
+    label {
+        margin-top: 1em;
+    }
+
+    #cart_btns {
+        margin-top: 1em;
+    }
+}
+
 .title_items_number {
     @include flex(row, flex-start, baseline);
     border-bottom: 1px solid #c2c2c2b9;
