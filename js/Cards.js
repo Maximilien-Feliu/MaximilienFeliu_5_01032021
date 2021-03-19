@@ -53,8 +53,7 @@ class Cards {
     //Add lenses to the select options
     addLensesToCard (response) {
         
-        for (let i = 0; i < response.lenses.length; i++) {
-               
+        for (let i = 0; i < response.lenses.length; i++) {             
             let selectOptions = document.getElementById('lenses_select');
             let newOption = document.createElement('option');
             newOption.className = 'lenses_option';
@@ -62,7 +61,6 @@ class Cards {
             selectOptions.appendChild(newOption)[i];
             newOption.innerHTML = response.lenses[i];
             newOption.value = 'lense' + i;
-
         }   
     }
 

@@ -6,10 +6,14 @@ if (cartItems != null) {
     cartItems = Object.values(cartItems);
 }
 
-console.log(cartItems);
-
 cart.fillCart();
 cart.totalPrice();
+cart.selectQuantity();
 cart.removeItemInCart();
 cart.numberInCartOnLoad();
+
+console.log(cartItems);
+
+
+
 

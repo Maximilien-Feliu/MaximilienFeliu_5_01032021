@@ -79,7 +79,7 @@ class Cart {
         let itemPrice = document.createElement('div');
         let itemPriceTotal = document.createElement('div');
         let itemImg = document.createElement('img');
-        let itemTitle = document.createElement('h2');
+        let itemTitle = document.createElement('h3');
         let newSpanLense = document.createElement('span');
         let qtityLabel = document.createElement('label');
         let qtitySelect = document.createElement('select');
@@ -122,19 +122,57 @@ class Cart {
         }
     }
 
+    // modify the quantity of items by selecting the quantity in cart
+    selectQuantity () {
+        let itemQuantity = document.getElementsByClassName('item_select_quantity');
+        let changeNumberInCart = localStorage.getItem('productInCart'); // for changing the number of items in cart
+        changeNumberInCart = parseInt(changeNumberInCart);
+              
+        for (let c = 0; c < itemQuantity.length; c++) {
+            let newOptions = document.createElement('option');
+            itemQuantity[c].appendChild(newOptions).innerHTML = cartItems[c].quantity; // create an option already selected with the quantity origin
+
+            for (let i = 1; i <= 10; i++) {    
+                newOptions = document.createElement('option'); // create 10 options by items quantity select
+                itemQuantity[c].appendChild(newOptions)[i];
+                newOptions.innerHTML = i;
+
+                if (i == cartItems[c].quantity) {
+                    itemQuantity[c].removeChild(newOptions)[i]; // remove the one equal to the origin option
+                }
+            } 
+            
+            itemQuantity[c].addEventListener('click', () => {
+                let selectOption = itemQuantity[c].options[itemQuantity[c].selectedIndex].textContent;
+                selectOption = parseInt(selectOption); // select the option and transform it to a number
+                
+                if (selectOption != cartItems[c].quantity) {
+                    changeNumberInCart = changeNumberInCart - cartItems[c].quantity + selectOption; // change the number of items in cart
+                    localStorage.setItem('productInCart', changeNumberInCart);
+
+                    cartItems[c].quantity = selectOption; // change the item quantity of the item
+                    cartItems[c].totalPrice = cartItems[c].price * selectOption; // change the total price of the item
+                    localStorage.setItem('product', JSON.stringify(cartItems));
+                    location.reload();
+                }
+            });
+        }
+    }
+
     // remove item from cart and localStorage
     removeItemInCart () {
         let btnDelete = document.getElementsByClassName('btn_delete');
-        let decreaseNumberInCart = localStorage.getItem('productInCart');
+        let decreaseNumberInCart = localStorage.getItem('productInCart'); // for changing the number of items in cart
         decreaseNumberInCart = parseInt(decreaseNumberInCart);
 
         if (cartItems) {
 
             for (let i = 0; i < btnDelete.length; i++) {
                 btnDelete[i].addEventListener('click', () => {
-                    decreaseNumberInCart = decreaseNumberInCart - cartItems[i].quantity;
+                    decreaseNumberInCart = decreaseNumberInCart - cartItems[i].quantity; // decrease the number of items in cart
                     localStorage.setItem('productInCart', decreaseNumberInCart);
-                    cartItems.splice(i, 1);
+                    
+                    cartItems.splice(i, 1); // remove the object from the array by his index
                     localStorage.setItem('product', JSON.stringify(cartItems)); 
                     location.reload();
                 });
