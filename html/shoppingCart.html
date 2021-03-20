@@ -53,16 +53,16 @@
         <h2 id="form_title">Vos informations</h2>
         <p>Veuillez remplir vos informations personnelles afin de finaliser votre commande</p>
 
-        <form action="../js/userForm.js" id="order_form" method="post" name="order_form">
+        <form action="#" id="order_form">
 
-            <label for="user_firstName">Votre Nom : </label>
-            <input type="text" id="user_firstName">
-
-            <label for="user_lastName">Votre Prénom :</label>
+            <label for="user_lastName">Votre Nom : </label>
             <input type="text" id="user_lastName">
 
-            <label for="user_adress">Votre adresse :</label>
-            <input type="text" id="user_adress">
+            <label for="user_firstName">Votre Prénom :</label>
+            <input type="text" id="user_firstName">
+
+            <label for="user_address">Votre adresse :</label>
+            <input type="text" id="user_address">
 
             <label for="user_city">Votre ville :</label>
             <input type="text" id="user_city">
@@ -71,8 +71,8 @@
             <input type="email" id="user_email">
 
             <div id="cart_btns">
-                <button id="btn_return_back">Retour aux achats</button>
-                <input type="submit" value="Commander">
+                <button id="btn_return_back" type="button">Retour aux achats</button>
+                <button type="submit" id="btn_order">Commander</button>
             </div>
 
         </form>
@@ -91,8 +91,8 @@
     <script src="../js/Products.js"></script>
     <script src="../js/request.js"></script>
     <script src="../js/Cart.js"></script>
-    <script src="../js/shoppingCart.js"></script>
     <script src="../js/userForm.js"></script>
+    <script src="../js/shoppingCart.js"></script>
     
 </body>
 </html>

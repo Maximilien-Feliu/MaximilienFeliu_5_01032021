@@ -12,7 +12,8 @@ class Products {
             price: response.price / 100,
             lense: selectOption,
             quantity: 0,
-            totalPrice: this.quantity * response.price / 100 
+            totalPrice: this.quantity * response.price / 100, 
+            id: response._id
         }
         
         // Search in the local storage if the 'product' key is already there 

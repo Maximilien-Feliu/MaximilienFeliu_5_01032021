@@ -1,4 +1,4 @@
-function getHttpRequest (method, url, boolean, productId = null) {
+function getHttpRequest (method, url, boolean, productId = null, datas = null) {
 
     return new Promise(function (resolve, reject) {
         var request = new XMLHttpRequest();
@@ -18,7 +18,7 @@ function getHttpRequest (method, url, boolean, productId = null) {
             request.open(method, url + productId, boolean);
         }
         
-        request.send();
+        request.send(datas);
     })
 }
 
