@@ -12,9 +12,7 @@ cart.totalPrice();
 cart.selectQuantity();
 cart.removeItemInCart();
 
-console.log(cartItems);
-
-user.getUserInfo();
+user.sendOrder();
 
 
 
