@@ -108,7 +108,7 @@ class Cart {
         qtityLabel.innerHTML = 'Quantité : ';
         newDivQtityContainer.appendChild(qtitySelect).className = 'item_select_quantity';
         qtitySelect.name = 'item_select_quantity';
-        itemRmv.className = 'btn_delete';
+        itemRmv.className = 'btn_text_only';
         itemRmv.innerHTML = 'Supprimer';
         itemPrice.innerHTML = priceOne + ' &euro;'; 
         itemPriceTotal.innerHTML = priceTotal + ' &euro;';
@@ -166,7 +166,7 @@ class Cart {
 
     // remove item from cart and localStorage
     removeItemInCart () {
-        let btnDelete = document.getElementsByClassName('btn_delete');
+        let btnDelete = document.getElementsByClassName('btn_text_only');
         let decreaseNumberInCart = localStorage.getItem('productInCart'); // for changing the number of items in cart
         decreaseNumberInCart = parseInt(decreaseNumberInCart);
 

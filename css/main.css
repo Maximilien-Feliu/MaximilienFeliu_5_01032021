@@ -39,6 +39,10 @@ strong {
   display: block;
 }
 
+.primary {
+  color: rgba(189, 101, 29, 0.822);
+}
+
 #products_container {
   width: 100%;
   margin-top: 2em;
@@ -472,13 +476,14 @@ footer h2 {
   margin-top: .4em;
 }
 
-.btn_delete {
+.btn_text_only {
   background-color: transparent;
   border: none;
   outline: none;
+  text-decoration: underline;
 }
 
-.btn_delete:hover {
+.btn_text_only:hover {
   color: #9a02a8;
   transition: .3s;
 }
@@ -504,6 +509,43 @@ footer h2 {
 #form_title {
   margin-bottom: 0px;
   margin-top: .3em;
+}
+
+#valid_order {
+  margin-top: 1em;
+  font-size: larger;
+  padding-bottom: 3em;
+}
+
+.title_order_print {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.order_info {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2em;
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: inset -3px -3px 20px rgba(0, 0, 0, 0.5), inset 3px 3px 20px black;
+  background: radial-gradient(#fff 50%, #f3e8f0, #727272, rgba(189, 101, 29, 0.822));
+}
+
+.order_info h3 {
+  line-height: 1.5em;
+}
+
+.order_info span {
+  color: rgba(189, 101, 29, 0.822);
 }
 
 @keyframes numberAppear {

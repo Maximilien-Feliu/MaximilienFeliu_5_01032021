@@ -124,10 +124,11 @@
     margin-top: .4em;
 }
 
-.btn_delete {
+.btn_text_only {
     background-color: transparent;
     border: none;
     outline: none;
+    text-decoration: underline;
 
     &:hover {
         color: $secondary-color;
@@ -154,3 +155,4 @@
     margin-bottom: 0px;
     margin-top: .3em;
 }
+

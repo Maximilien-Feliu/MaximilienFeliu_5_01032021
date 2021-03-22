@@ -98,6 +98,7 @@ class User {
         httpRequest.then((response) => {
             localStorage.clear();
             localStorage.setItem('ordered', JSON.stringify([response.orderId, totalAmount])); // set the response on localStorage for 'validation.html'
+            window.location.href = '../html/validOrder.html';
         });
     }
 

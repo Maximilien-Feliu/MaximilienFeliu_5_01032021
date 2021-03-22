@@ -1,0 +1,30 @@
+#valid_order {
+    margin-top: 1em;
+    font-size: larger;
+    padding-bottom: 3em;
+}
+
+.title_order_print {
+    @include flex(row, space-between, baseline);
+}
+
+.order_info {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2em;
+    width: 50%;
+    height: 400px;
+    @include flexCenter(column);
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: inset -3px -3px 20px rgba(0, 0, 0, 0.5),
+                inset 3px 3px 20px black;
+    background: radial-gradient($white 50%, $background-color, rgb(114, 114, 114), $primary-color);
+
+    h3 {
+        line-height: 1.5em;
+    }
+    span {
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oricamera : Votre commande a bien été validée !</title>
+    <meta name="description" content="Oricamera vous remercie de votre confiance et vous souhaite une agréable réception de votre commande." />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/main.css" />
+    
+    <script src="https://kit.fontawesome.com/3ec31e340a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html">
+            <div class="header_brand_logo">
+                <div class="logo"><img src="../img/logo.png" alt="logo du site Oricamera" width="70" height="70" /></div>
+                <div class="header_brand_description">
+                    <h1 class="font_header font_lighter">Oricamera</h1>
+                    <p class="font_header font_header-smaller">Spécialiste des <strong>caméras vintage</strong></p>
+                </div>
+            </div>
+        </a>
+
+        <nav class="header_nav">
+            <a href="shoppingCart.html"><i class="fas fa-shopping-cart"></i>PANIER <span class="header_nav_cart_number">0</span></a>
+        </nav>
+    </header>
+
+    <main id="valid_order">
+        <div class="title_order_print">
+            <h2>Votre commande a bien été validée !</h2>
+            <button class="print_order btn_text_only">Imprimer votre commande</button>
+        </div>
+        <p>
+            Vous recevrez dans un court instant un <span class="bold primary">e-mail </span> de confirmation de votre commande. 
+            <br />Nous vous remercions de votre confiance et vous souhaitons une agréable réception. À très bientôt chez <span class="bold primary">Oricamera</span> !
+        </p>
+        <p> Pour revenir à notre page d'accueil. Vous pouvez cliquer <a href="../index.html" class="primary">ici</a>.</p>
+        <div class="order_info">
+            <div class="order_info--id">
+                <h3>Identifiant de votre commande : 
+                    <br/><span class="order_id"></span>
+                </h3>                
+            </div>
+            <div class="order_info--total_amount">
+                <h3>Montant total : 
+                    <br/><span class="order_total_amount"></span>
+                </h3>              
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h2 class="font_header font_lighter">Oricamera</h2>
+        <nav class="footer_nav_icons">
+            <a href="https://github.com/Maximilien-Feliu/MaximilienFeliu_5_01032021"><i class="fab fa-github"></i>Github</a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i>Facebook</a>
+            <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter-square"></i>Twitter</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i>Instagram</a>
+        </nav>
+    </footer>
+    
+    <script src="../js/validOrder.js"></script>
+</body>
+</html>
