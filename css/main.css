@@ -196,6 +196,33 @@ button:focus {
   color: white;
 }
 
+.btn_order {
+  width: 180px;
+}
+
+#btn_return_back {
+  border: none;
+  background-color: #fff;
+  text-decoration: underline;
+}
+
+#btn_return_back:hover {
+  color: #9a02a8;
+  transition: .3s;
+}
+
+.btn_text_only {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+}
+
+.btn_text_only:hover {
+  color: #9a02a8;
+  transition: .3s;
+}
+
 .filters_show {
   display: flex;
   flex-direction: row;
@@ -205,6 +232,36 @@ button:focus {
 
 #filters_hidden {
   display: none;
+}
+
+#input_error {
+  color: #d30000;
+  margin-bottom: 0px;
+}
+
+#form_title {
+  margin-bottom: 0px;
+  margin-top: .3em;
+}
+
+#order_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#order_form label {
+  margin-top: 1em;
+  margin-bottom: .3em;
+}
+
+#order_form input {
+  transition: .3s;
+}
+
+#order_form #cart_btns {
+  margin-top: 1.5em;
 }
 
 li {
@@ -325,24 +382,6 @@ footer h2 {
   margin-top: 3em;
 }
 
-#input_error {
-  color: #d30000;
-  margin-bottom: 0px;
-}
-
-#background_shadow {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.678);
-  visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 #shopping_cart {
   display: flex;
   flex-direction: row;
@@ -379,41 +418,6 @@ footer h2 {
 
 #shopping_cart_customer p {
   margin-bottom: 0px;
-}
-
-#order_form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#order_form label {
-  margin-top: 1em;
-  margin-bottom: .3em;
-}
-
-#order_form input {
-  transition: .3s;
-}
-
-#order_form #cart_btns {
-  margin-top: 1.5em;
-}
-
-#order_form #cart_btns .btn_order {
-  width: 180px;
-}
-
-#order_form #cart_btns #btn_return_back {
-  border: none;
-  background-color: #fff;
-  text-decoration: underline;
-}
-
-#order_form #cart_btns #btn_return_back:hover {
-  color: #9a02a8;
-  transition: .3s;
 }
 
 .title_items_number {
@@ -476,18 +480,6 @@ footer h2 {
   margin-top: .4em;
 }
 
-.btn_text_only {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  text-decoration: underline;
-}
-
-.btn_text_only:hover {
-  color: #9a02a8;
-  transition: .3s;
-}
-
 .item_price--total {
   color: rgba(189, 101, 29, 0.822);
 }
@@ -504,11 +496,6 @@ footer h2 {
   width: 100%;
   height: 150px;
   background-color: #f3e8f0;
-}
-
-#form_title {
-  margin-bottom: 0px;
-  margin-top: .3em;
 }
 
 #valid_order {
@@ -546,6 +533,19 @@ footer h2 {
 
 .order_info span {
   color: rgba(189, 101, 29, 0.822);
+}
+
+#background_shadow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.678);
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @keyframes numberAppear {

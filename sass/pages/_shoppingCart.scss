@@ -1,79 +1,32 @@
-#input_error {
-    color: $error-color;
-    margin-bottom: 0px;
-}
-
-#background_shadow {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.678);
-    visibility: hidden;
-    @include flexCenter(column);
-}
-
 #shopping_cart {
     @include flex(row, space-between, flex-start);
-}
 
-#shopping_cart_order {
-    margin-top: 2em;
-    margin-right: 3em;
-    width: 20%;
-    position: fixed;
-    right: 3em;
-}
-
-#shopping_cart_details {
-    margin-top: 2em;
-    padding-bottom: 2em;
-    width: 70%;
-}
-
-#shopping_cart_customer { 
-    @include flexCenter(column);
-    width: 30%;
-    height: 80%;
-    background-color: $white;
-    border-radius: 20px;
-    box-shadow: -3px -3px 3px $white,
-                3px 3px 3px $white;
-    text-align: center;
-
-    p{
-        margin-bottom: 0px;
+    &_order {
+        margin-top: 2em;
+        margin-right: 3em;
+        width: 20%;
+        position: fixed;
+        right: 3em;
     }
-}
-
-#order_form {
-    @include flexCenter(column);
-
-    label {
-        margin-top: 1em;
-        margin-bottom: .3em;
+    
+    &_details {
+        margin-top: 2em;
+        padding-bottom: 2em;
+        width: 70%;
     }
-
-    input {
-        transition: .3s;
-    }
-
-    #cart_btns {
-        margin-top: 1.5em; 
-
-        .btn_order {
-            width: 180px;
-        }
-
-        #btn_return_back {
-            border: none;
-            background-color: $white;
-            text-decoration: underline;
-            
-            &:hover {
-                color: $secondary-color;
-                transition: .3s;
-            }
+    
+    &_customer { 
+        @include flexCenter(column);
+        width: 30%;
+        height: 80%;
+        background-color: $white;
+        border-radius: 20px;
+        box-shadow: -3px -3px 3px $white,
+                    3px 3px 3px $white;
+        text-align: center;
+    
+        p{
+            margin-bottom: 0px;
         }
     }
 }
@@ -87,63 +40,47 @@
     margin-left: 3em;
 }
 
-.item_container {
+.item {
+
+    &_container {
     @include flex(row, flex-start, flex-start);
     @include rectangularCard(0px);
     height: 120px;
     width: 100%;
     border-bottom: 1px solid #c2c2c2b9;
 
-    img {
+        img {
+            width: 40%;
+            height: 100%;
+        }
+    }
+    &_title {
+        margin-left: .7em;
+        margin-top: 0px;
+        line-height: 1.5em;
+    }
+    &_lense {
+        font-weight: lighter;
+        font-size: $normal-size;
+    }
+    &_dynamic_details {
+        @include flex(row, space-around, flex-end);
+        width: 60%;
+        height: 95%;
+    }
+    &_img_description {
+        @include flex(row, flex-start, flex-start);
         width: 40%;
-        height: 100%;
+        height: 90%;
+        margin-top: .4em;
+    }
+    &_price--total {
+        color: $primary-color;
+    }
+    &_price--total--all {
+        color: $primary-color;
     }
 }
-
-.item_title {
-    margin-left: .7em;
-    margin-top: 0px;
-    line-height: 1.5em;
-}
-
-.item_lense {
-    font-weight: lighter;
-    font-size: $normal-size;
-}
-
-.item_dynamic_details {
-    @include flex(row, space-around, flex-end);
-    width: 60%;
-    height: 95%;
-}
-
-.item_img_description {
-    @include flex(row, flex-start, flex-start);
-    width: 40%;
-    height: 90%;
-    margin-top: .4em;
-}
-
-.btn_text_only {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    text-decoration: underline;
-
-    &:hover {
-        color: $secondary-color;
-        transition: .3s;
-    }
-}
-
-.item_price--total {
-    color: $primary-color;
-}
-
-.item_price--total--all {
-    color: $primary-color;
-}
-
 #items_order {
     @include flex(column, space-around, center);
     width: 100%;
@@ -151,8 +88,5 @@
     background-color: $background-color;
 }
 
-#form_title {
-    margin-bottom: 0px;
-    margin-top: .3em;
-}
+
 

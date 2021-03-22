@@ -12,12 +12,36 @@ button{
         outline: none;
     }
 }
-
 .btn {
     @include btnStyle;
     @include flexCenter(row);
     background: linear-gradient($primary-color, $tertiary-color);
     color: white;
 }
+.btn_order {
+    width: 180px;
+}
+#btn_return_back {
+    border: none;
+    background-color: $white;
+    text-decoration: underline;
+    
+    &:hover {
+        color: $secondary-color;
+        transition: .3s;
+    }
+}
+.btn_text_only {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+
+    &:hover {
+        color: $secondary-color;
+        transition: .3s;
+    }
+}
+
 
 

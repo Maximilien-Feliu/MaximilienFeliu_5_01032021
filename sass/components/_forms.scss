@@ -14,3 +14,29 @@
         }
     }
 }
+#input_error {
+    color: $error-color;
+    margin-bottom: 0px;
+}
+
+// form
+#form_title {
+    margin-bottom: 0px;
+    margin-top: .3em;
+}
+#order_form {
+    @include flexCenter(column);
+
+    label {
+        margin-top: 1em;
+        margin-bottom: .3em;
+    }
+
+    input {
+        transition: .3s;
+    }
+
+    #cart_btns { 
+        margin-top: 1.5em; 
+    }
+}
