@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/3ec31e340a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <header>
         <a href="../index.html">
             <div class="header_brand_logo">
@@ -49,36 +50,38 @@
             </div>
         </section>
     </main>
-    <section id="shopping_cart_customer">
-        <div id="input_error"></div>
-        <h2 id="form_title">Vos informations</h2>
-        <p>Veuillez remplir vos informations personnelles afin de finaliser votre commande</p>
-        <p class="required_info">* Champs obligatoires</p>
+  
+    <div id="background_shadow">
+        <section id="shopping_cart_customer">
+            <div id="input_error">* Champs obligatoires</div>
+            <h2 id="form_title">Vos informations</h2>
+            <p>Veuillez remplir vos informations personnelles afin de finaliser votre commande.</p>
+    
+            <form action="#" id="order_form">
+    
+                <label for="user_lastName">Votre <span class="bold">Nom</span>* : </label>
+                <input type="text" id="user_lastName" maxlength="40" required>
+    
+                <label for="user_firstName">Votre <span class="bold">Prénom</span>* :</label>
+                <input type="text" id="user_firstName" maxlength="40" required>
+    
+                <label for="user_address">Votre <span class="bold">adresse</span>* :</label>
+                <input type="text" id="user_address" maxlength="100" required>
+    
+                <label for="user_city">Votre <span class="bold">ville</span>* :</label>
+                <input type="text" id="user_city" maxlength="58" required>
+    
+                <label for="user_email">Votre adresse <span class="bold">email</span>* :</label>
+                <input type="email" id="user_email" maxlength="255" required>
+    
+                <div id="cart_btns">
+                    <button type="submit" class="btn btn_order">Valider la commande</button>
+                    <button id="btn_return_back" type="button">Retourner aux achats</button>           
+                </div>
 
-        <form action="#" id="order_form">
-
-            <label for="user_lastName">Votre Nom* : </label>
-            <input type="text" id="user_lastName" maxlength="40" required>
-
-            <label for="user_firstName">Votre Prénom* :</label>
-            <input type="text" id="user_firstName" maxlength="40" required>
-
-            <label for="user_address">Votre adresse* :</label>
-            <input type="text" id="user_address" maxlength="100" required>
-
-            <label for="user_city">Votre ville* :</label>
-            <input type="text" id="user_city" maxlength="58" required>
-
-            <label for="user_email">Votre adresse email* :</label>
-            <input type="email" id="user_email" maxlength="255" required>
-
-            <div id="cart_btns">
-                <button id="btn_return_back" type="button">Retour aux achats</button>
-                <button type="submit" id="btn_order">Commander</button>
-            </div>
-
-        </form>
-    </section>
+            </form>
+        </section>
+    </div>
 
     <footer>
         <h2 class="font_header font_lighter">Oricamera</h2>

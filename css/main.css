@@ -323,6 +323,20 @@ footer h2 {
 
 #input_error {
   color: #d30000;
+  margin-bottom: 0px;
+}
+
+#background_shadow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.678);
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #shopping_cart {
@@ -347,24 +361,32 @@ footer h2 {
 }
 
 #shopping_cart_customer {
-  margin-left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: -3px -3px 3px #fff, 3px 3px 3px #fff;
+  text-align: center;
 }
 
-.required_info {
-  font-size: 13px;
-  color: #d30000;
-  margin-top: 3px;
+#shopping_cart_customer p {
+  margin-bottom: 0px;
 }
 
 #order_form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 
 #order_form label {
   margin-top: 1em;
+  margin-bottom: .3em;
 }
 
 #order_form input {
@@ -372,7 +394,22 @@ footer h2 {
 }
 
 #order_form #cart_btns {
-  margin-top: 1em;
+  margin-top: 1.5em;
+}
+
+#order_form #cart_btns .btn_order {
+  width: 180px;
+}
+
+#order_form #cart_btns #btn_return_back {
+  border: none;
+  background-color: #fff;
+  text-decoration: underline;
+}
+
+#order_form #cart_btns #btn_return_back:hover {
+  color: #9a02a8;
+  transition: .3s;
 }
 
 .title_items_number {
@@ -462,6 +499,11 @@ footer h2 {
   width: 100%;
   height: 150px;
   background-color: #f3e8f0;
+}
+
+#form_title {
+  margin-bottom: 0px;
+  margin-top: .3em;
 }
 
 @keyframes numberAppear {

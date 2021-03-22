@@ -191,6 +191,16 @@ class Cart {
         }
     }
 
+    // Make the form appear by clicking on the command button
+    formAppear () {
+        let btnPreOrder = document.getElementsByClassName('btn_preorder')[0];
+        let userFormBackground = document.getElementById('background_shadow'); 
+
+        btnPreOrder.addEventListener('click', () => {
+            userFormBackground.style.visibility = 'visible';
+        });
+    }
+
     //Indicate the empty basket and create a redirection to index.html 
     emptyBasket () {
         let emptyBasket = document.getElementById('items_in_cart');

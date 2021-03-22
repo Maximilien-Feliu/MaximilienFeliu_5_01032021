@@ -11,9 +11,9 @@ cart.fillCart();
 cart.totalPrice();
 cart.selectQuantity();
 cart.removeItemInCart();
+cart.formAppear();
 
 user.sendOrder();
-
 
 
 
