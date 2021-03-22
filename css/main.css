@@ -321,6 +321,10 @@ footer h2 {
   margin-top: 3em;
 }
 
+#input_error {
+  color: #d30000;
+}
+
 #shopping_cart {
   display: flex;
   flex-direction: row;
@@ -346,6 +350,12 @@ footer h2 {
   margin-left: 20%;
 }
 
+.required_info {
+  font-size: 13px;
+  color: #d30000;
+  margin-top: 3px;
+}
+
 #order_form {
   display: flex;
   flex-direction: column;
@@ -355,6 +365,10 @@ footer h2 {
 
 #order_form label {
   margin-top: 1em;
+}
+
+#order_form input {
+  transition: .3s;
 }
 
 #order_form #cart_btns {

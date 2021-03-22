@@ -1,32 +1,74 @@
 class User {
     
     /***************************
-     ****** get the values from the form and set on local Storage, 
-                then get objects from localStorage, 
-                    transform it to an array and send it to the back-end server *****
-                                                            ***************************/
+     ****** validate and get the values from the form, then create a contact object, 
+                get products object from localStorage and create an order object, 
+                    send it to the back-end server and set orderId to the localStorage*****
+                                                                        ***************************/
+                                                                       
     sendOrder () {
-        let form = document.getElementById('btn_order');
+        let order = document.getElementById('btn_order');
+        
+        let regexpOccidentalNoun = /^[a-zA-ZéèîïÉÈÎÏàçùüöôœÀÇÙÜÖÔ]+([\s-'][a-zA-ZéèîïÉÈÎÏàçùüöôœÀÇÙÜÖÔ]+){0,2}?$/; 
+        let regexpOccidentalCity = /^[a-zA-ZéèîïÉÈÎÏàçùüöôœÀÇÙÜÖÔ]+([\s-'][a-zA-ZéèîïÉÈÎÏàçùüöôœÀÇÙÜÖÔ]+){0,20}?$/;
+        let regexpEmail = /^[\w-.éèîïàçùüöôœ]+[@]{1}[\w-éèîïàçùüöôœ]+[.]{1}[a-z]{2,3}$/;
 
-        form.addEventListener('click', () => { // get the values from the form (id='order-form')
-            let firstName = document.getElementById('user_firstName').value;
-            let lastName = document.getElementById('user_lastName').value;
-            let address = document.getElementById('user_address').value;
-            let city = document.getElementById('user_city').value;
-            let email = document.getElementById('user_email').value;
+        order.addEventListener('click', (e) => { // get the values from the form (id='order-form')
+            let inputRequired = document.getElementsByTagName('input'); 
+            let errorMessage = document.getElementById('input_error');
+            let firstName = document.getElementById('user_firstName');
+            let lastName = document.getElementById('user_lastName');
+            let address = document.getElementById('user_address');
+            let city = document.getElementById('user_city');
+            let email = document.getElementById('user_email');
 
-            let contact = { // create a contact object
-                firstName: firstName,
-                lastName: lastName,
-                address: address,
-                city: city,
-                email: email
+            inputRequired = Array.from(inputRequired);
+            e.preventDefault();
+
+            switch (false) {
+                case regexpOccidentalNoun.test(firstName.value):
+                    firstName.style.borderColor = 'rgb(211, 0, 0)';
+                    errorMessage.innerHTML = 'Prénom invalide.';
+                    break;
+    
+                case regexpOccidentalNoun.test(lastName.value):
+                    lastName.style.borderColor = 'rgb(211, 0, 0)';
+                    errorMessage.innerHTML = 'Nom invalide.';
+                    break;
+    
+                case regexpOccidentalCity.test(city.value):
+                    city.style.borderColor = 'rgb(211, 0, 0)';
+                    errorMessage.innerHTML = 'Nom de ville invalide.';
+                    break;
+    
+                case regexpEmail.test(email.value):
+                    email.style.borderColor = 'rgb(211, 0, 0)';
+                    errorMessage.innerHTML = 'Email invalide.';
+                    break;
+    
+                default:
+                    if(address.value != ""){
+                        let contact = { // create a contact object
+                            firstName: firstName.value,
+                            lastName: lastName.value,
+                            address: address.value,
+                            city: city.value,
+                            email: email.value
+                        }
+                        contact = { 
+                            contact: contact
+                        }
+                        
+                        this.objectByOrder(contact);
+                    }
             }
-            contact = { 
-                contact: contact
+
+            for (let i = 0; i < inputRequired.length; i++) {
+                if (inputRequired[i].value === "") {
+                    inputRequired[i].style.borderColor = 'rgb(211, 0, 0)';   
+                    errorMessage.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
+                }
             }
-            
-            this.objectByOrder(contact);
         });   
     }
 

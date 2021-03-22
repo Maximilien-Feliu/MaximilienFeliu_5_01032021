@@ -1,3 +1,7 @@
+#input_error {
+    color: $error-color;
+}
+
 #shopping_cart {
     @include flex(row, space-between, flex-start);
 }
@@ -20,11 +24,21 @@
     margin-left: 20%;
 }
 
+.required_info {
+    font-size: 13px;
+    color: $error-color;
+    margin-top: 3px;
+}
+
 #order_form {
     @include flex(column, flex-start, flex-start);
 
     label {
         margin-top: 1em;
+    }
+
+    input {
+        transition: .3s;
     }
 
     #cart_btns {
