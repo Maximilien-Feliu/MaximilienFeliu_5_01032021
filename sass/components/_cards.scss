@@ -66,31 +66,16 @@
                 @include flex(column, flex-start, space-between);
 
             } 
-
-            .select_btn {
-                @include flex(row, space-between, baseline);
-                
-                .btn {
-                    margin-right: 1.5em;
-                    min-width: 150px;
-                    box-shadow: -2px 2px 4px $tertiary-color,
-                                2px -2px 4px $tertiary-color; 
-                    background: linear-gradient($primary-color, $tertiary-color);
-                }
-            }
-
             #lenses_select {
                 width: 50%;
                 height: 2em;
             }
-
             .lenses_label {
                 font-size: smaller;
             }
         }
 
     }
-
     &_description_container {
         margin-left: 0.5em;
     }
@@ -108,10 +93,16 @@
         background-color: rgba(0, 0, 0, 0.658);
         color: white;
         font-size: 24px;
+        cursor: pointer;
+        display: none;
     }
 
     &_personalize {
         margin-top: 3em;
+    }
+
+    &_link:hover .product_hover {
+        display: flex;
     }
 }
 

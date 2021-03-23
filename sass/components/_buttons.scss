@@ -18,6 +18,17 @@ button{
     background: linear-gradient($primary-color, $tertiary-color);
     color: white;
 }
+.select_btn {
+    @include flex(row, space-between, baseline);
+    
+    .btn {
+        margin-right: 1.5em;
+        min-width: 150px;
+        box-shadow: -2px 2px 4px $tertiary-color,
+                    2px -2px 4px $tertiary-color; 
+        background: linear-gradient($primary-color, $tertiary-color);
+    }
+}
 .btn_order {
     width: 180px;
 }

@@ -115,20 +115,6 @@ strong {
   align-items: space-between;
 }
 
-.product_card--id .select_btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.product_card--id .select_btn .btn {
-  margin-right: 1.5em;
-  min-width: 150px;
-  box-shadow: -2px 2px 4px #8721ca, 2px -2px 4px #8721ca;
-  background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
-}
-
 .product_card--id #lenses_select {
   width: 50%;
   height: 2em;
@@ -158,10 +144,16 @@ strong {
   background-color: rgba(0, 0, 0, 0.658);
   color: white;
   font-size: 24px;
+  cursor: pointer;
+  display: none;
 }
 
 .product_personalize {
   margin-top: 3em;
+}
+
+.product_link:hover .product_hover {
+  display: flex;
 }
 
 a {
@@ -194,6 +186,20 @@ button:focus {
   flex-direction: row;
   background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
   color: white;
+}
+
+.select_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.select_btn .btn {
+  margin-right: 1.5em;
+  min-width: 150px;
+  box-shadow: -2px 2px 4px #8721ca, 2px -2px 4px #8721ca;
+  background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
 }
 
 .btn_order {
@@ -374,11 +380,7 @@ footer h2 {
   align-items: center;
 }
 
-.title_filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+#products {
   margin-top: 3em;
 }
 
