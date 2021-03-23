@@ -1,0 +1,14 @@
+.head_slides {
+    margin-top: 2em;
+    height: 350px; 
+    transition: 2s;
+    position: relative;
+    h2 {
+        color: $white;
+    }
+    img {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+}

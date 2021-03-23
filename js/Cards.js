@@ -72,15 +72,17 @@ class Cards {
         //catch classes to modify and create elements
         let newLink = document.getElementsByClassName('product_link')[0];
         let newDivContainer = document.getElementsByClassName('product_card')[0]; 
+        let newDivHover = document.getElementsByClassName('product_hover')[0];
         let newDivDescriptionContainer = document.getElementsByClassName('product_description_container')[0];
         let newDiv = document.createElement('div');
         let newBtn = document.createElement('button'); 
         let newLabel = document.createElement('label');
         let newSelect = document.createElement('select');
         let newOption = document.createElement('option'); 
-            
+             
         //create the product card
         newLink.replaceWith(newDivContainer);
+        newDivContainer.removeChild(newDivHover);
         newDivContainer.classList.add('product_card--id');
         newDivDescriptionContainer.appendChild(newLabel).setAttribute('for', 'lenses_select');
         newLabel.className = 'lenses_label';

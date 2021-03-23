@@ -94,7 +94,8 @@
         color: white;
         font-size: 24px;
         cursor: pointer;
-        display: none;
+        opacity: 0%;
+        transition: 1s;
     }
 
     &_personalize {
@@ -102,7 +103,7 @@
     }
 
     &_link:hover .product_hover {
-        display: flex;
+        opacity: 100%;
     }
 }
 
