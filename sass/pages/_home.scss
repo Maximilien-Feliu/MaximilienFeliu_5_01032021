@@ -6,7 +6,11 @@
     margin-top: 3em;
 }
 
-.title_appear {
+.title_slides {
     display: none;
+    color: black;
+    background-color: #f3e8f0dc;
+    padding: 5px;
+    animation: titleAppear 2s ease-in-out;
 }
 

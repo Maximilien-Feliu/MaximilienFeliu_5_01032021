@@ -3,6 +3,8 @@
     height: 350px; 
     transition: 2s;
     position: relative;
+    @include flexCenter(column);
+    
     h2 {
         color: $white;
     }

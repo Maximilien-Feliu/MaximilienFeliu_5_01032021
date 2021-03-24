@@ -39,7 +39,7 @@ header {
         }
 
         &_cart_number {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: $Times;
             position: absolute;
             @include flexCenter(column);
             top: -12px;
