@@ -1,9 +1,37 @@
-#home_presentation {
-    margin-top: -35px;
+#home {
+    &_slides {
+        margin-top: -35px;
+    }
+    &_welcome {
+        @include flexCenter(column);
+        text-align: center;
+        margin-top: 1.5em;
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 1em;
+        }
+    }
 }
 
 #products {
-    margin-top: 3em;
+    margin-top: 15em;
+
+}
+
+.to_reveal {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.to_reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(.5, 0, .2, .9);
 }
 
 .title_slides {
@@ -12,5 +40,21 @@
     background-color: #f3e8f0dc;
     padding: 5px;
     animation: titleAppear 2s ease-in-out;
+}
+
+.slides_arrow { 
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #f3e8f094;
+    margin-right: 1em;
+    margin-left: 1em;
+    display: none;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.712);
+        transition: .3s;
+        color: $secondary-color;
+    }
 }
 

@@ -7,9 +7,15 @@
 }
 button{
     cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        opacity: 80%;
+    }
     
     &:focus{
         outline: none;
+
     }
 }
 .btn {
@@ -29,7 +35,7 @@ button{
         background: linear-gradient($primary-color, $tertiary-color);
     }
 }
-.btn_order {
+.btn_larger {
     width: 180px;
 }
 #btn_return_back {

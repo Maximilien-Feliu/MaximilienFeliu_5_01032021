@@ -28,22 +28,36 @@
             <a href="html/shoppingCart.html"><i class="fas fa-shopping-cart"></i>PANIER <span class="header_nav_cart_number">0</span></a>
         </nav>
     </header>
-    <section id="home_presentation">
-        
+    
+    <section id="home_slides">
         <div class="head_slides">
             <img src="img/favicon/favicon-16x16.png" alt="logo de la boutique oricamera">
 
-            <p class="title_slides title_appear0">Revivez le charme de l'époque comme si vous y étiez grâce à nos <strong>caméras vintage</strong></p>
-            <p class="title_slides title_appear1">Choisissez la <strong>caméra vintage</strong> de votre choix</p>
-            <p class="title_slides title_appear2">Personnalisez votre <strong>caméra vintage</strong> en choisissant la <strong>lentille</strong> d'objectif qui vous convient</p>
-            <p class="title_slides title_appear3">Capturez vos meilleurs moments pour que vos souvenirs restent inoubliables à travers le temps</p>
+            <button class="slides_arrow" type="button">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <h2 class="title_slides title_appear0 font_header-smaller">Revivez le charme de l'époque comme si vous y étiez grâce à nos <strong class="bold">caméras vintage</strong></h2>
+            <p class="title_slides title_appear1 bold">Choisissez la <strong class="bold">caméra vintage</strong> de votre choix</p>
+            <p class="title_slides title_appear2 bold">Personnalisez votre <strong class="bold">caméra vintage</strong> en choisissant la <strong class="bold">lentille</strong> d'objectif qui vous convient</p>
+            <p class="title_slides title_appear3 bold">Capturez vos meilleurs moments pour que vos souvenirs restent inoubliables à travers le temps</p>
+
+            <button class="slides_arrow" type="button">
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
 
-        <h2>Bienvenue chez Oricamera</h2>
     </section>
 
     <main>
-        <section id="products">
+        <section id="home_welcome" class="to_reveal">
+            <h2>Bienvenue chez Oricamera</h2>
+            <p>Filiale de l'entreprise <strong>Orinoco</strong>, <strong>Oricamera</strong> est un site web e-commerce spécialisé dans la vente de <strong>caméras vintage</strong>.</p>
+            <p>Toutes nos caméras vintage ont été sélectionnées par nos experts afin que vous puissiez profiter pleinement de votre expérience. <br />Pour plus de sécurité, nos appareils sont garantis deux ans à compter de la date d'achat du produit.</p>
+            <a href="#products"><button class="btn btn_larger" type="button">Voir nos produits</button></a>
+        </section>
+
+        <section id="products" class="to_reveal">
             <h2>Nos caméras vintage</h2>   
             <div id="products_container"></div>
         </section>
@@ -63,6 +77,7 @@
     <script src="./js/Cards.js"></script>
     <script src="./js/Cart.js"></script>
     <script src="./js/Slides.js"></script>
+    <script src="./js/Scroll.js"></script>
     <script src="./js/index.js"></script>
     
 </body>

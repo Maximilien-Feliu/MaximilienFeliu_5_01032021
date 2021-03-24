@@ -1,16 +1,23 @@
 .head_slides {
+    @include flexCenter(row);
     margin-top: 2em;
     height: 350px; 
     transition: 2s;
     position: relative;
-    @include flexCenter(column);
+    cursor: pointer;
     
-    h2 {
-        color: $white;
-    }
     img {
         position: absolute;
         right: 10px;
         bottom: 10px;
+    }
+
+    &:hover {
+        @include flex(row, space-between, center);
+    }
+
+    &:hover .slides_arrow {
+        @include flexCenter(row);
+        
     }
 }

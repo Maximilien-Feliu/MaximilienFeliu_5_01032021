@@ -15,6 +15,10 @@
   font-weight: 900;
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
@@ -169,6 +173,11 @@ a:hover {
 
 button {
   cursor: pointer;
+  transition: .5s;
+}
+
+button:hover {
+  opacity: 80%;
 }
 
 button:focus {
@@ -203,7 +212,7 @@ button:focus {
   background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
 }
 
-.btn_order {
+.btn_larger {
   width: 180px;
 }
 
@@ -276,24 +285,35 @@ li {
 }
 
 .head_slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   margin-top: 2em;
   height: 350px;
   transition: 2s;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.head_slides h2 {
-  color: #fff;
+  cursor: pointer;
 }
 
 .head_slides img {
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.head_slides:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head_slides:hover .slides_arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 header {
@@ -402,12 +422,41 @@ footer h2 {
   align-items: center;
 }
 
-#home_presentation {
+#home_slides {
   margin-top: -35px;
 }
 
+#home_welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+#home_welcome h2 {
+  color: rgba(189, 101, 29, 0.822);
+  margin-bottom: 10px;
+}
+
+#home_welcome .btn {
+  margin-top: 1em;
+}
+
 #products {
-  margin-top: 3em;
+  margin-top: 15em;
+}
+
+.to_reveal {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.to_reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s cubic-bezier(0.5, 0, 0.2, 0.9);
 }
 
 .title_slides {
@@ -416,6 +465,22 @@ footer h2 {
   background-color: #f3e8f0dc;
   padding: 5px;
   animation: titleAppear 2s ease-in-out;
+}
+
+.slides_arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #f3e8f094;
+  margin-right: 1em;
+  margin-left: 1em;
+  display: none;
+}
+
+.slides_arrow:hover {
+  background-color: rgba(255, 255, 255, 0.712);
+  transition: .3s;
+  color: #9a02a8;
 }
 
 #shopping_cart {
