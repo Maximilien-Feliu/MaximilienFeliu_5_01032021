@@ -1,5 +1,10 @@
 class ValidOrder {
 
+    constructor () {
+        this.getValidOrder();
+        this.printOrder();
+    }
+
     getValidOrder () {
 
         let validOrder = JSON.parse(localStorage.getItem('ordered'));
@@ -9,7 +14,13 @@ class ValidOrder {
         orderId.innerHTML = validOrder[0];
         orderAmount.innerHTML = validOrder[1];
     }
+
+    printOrder () {
+        let printOrder = document.getElementsByClassName('print_order')[0];
+        printOrder.addEventListener('click', () => {
+            window.print();
+        });
+    }
 }
 
 let validOrder = new ValidOrder;
-validOrder.getValidOrder();

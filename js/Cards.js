@@ -20,6 +20,8 @@ class Cards {
         newLink.appendChild(newDivContainer).appendChild(newImg).alt = imgAlt;
         newDivContainer.className = 'product_card shadow';
         newImg.src = imgURL;
+        newImg.width = '70';
+        newImg.height = '50';
         newDivContainer.appendChild(newDivHover).className = 'product_hover';
         newDivHover.innerHTML = 'voir la fiche produit';
         newDivContainer.appendChild(newDescriptionContainer).className = 'product_description_container';

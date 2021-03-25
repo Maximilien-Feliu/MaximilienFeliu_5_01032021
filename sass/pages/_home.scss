@@ -14,6 +14,11 @@
 
         .btn {
             margin-top: 1em;
+
+            &:hover {
+                opacity: 80%;
+                color: white;
+            }
         }
     }
 }

@@ -58,8 +58,8 @@ class Cart {
             for (let i = 0; i < this.cartItems.length; i++) {
                 this.itemPlaceInCart (this.cartItems[i].img, this.cartItems[i].title, this.cartItems[i].lense, this.cartItems[i].price, this.cartItems[i].totalPrice);
                 this.addItemsNumber ();   
-            }
-            this.addTitles ();
+                this.addTitles ();
+            }         
         }else {
             this.emptyBasket();
         }
@@ -100,6 +100,7 @@ class Cart {
         newDivDynamicDetails.appendChild(itemPriceTotal).className = 'item_price--total bold';
 
         newDivTitleDetails.appendChild(itemImg).src = imgUrl;
+        itemImg.alt = 'image d\'une caméra vintage';
         newDivTitleDetails.appendChild(itemTitle).className = 'item_title'; 
         itemTitle.innerHTML = itemName;
         itemTitle.appendChild(lineBreak);
@@ -213,6 +214,7 @@ class Cart {
 
         btnPreOrder.addEventListener('click', () => {
             userFormBackground.style.visibility = 'visible';
+            userFormBackground.style.opacity = '100%';
         });
     }
 

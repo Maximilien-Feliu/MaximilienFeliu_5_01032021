@@ -108,6 +108,7 @@ class User {
 
         returnBack.addEventListener('click', () => {
             userFormBackground.style.visibility = 'hidden'; 
+            userFormBackground.style.opacity = '0%';
         });
     }
 }

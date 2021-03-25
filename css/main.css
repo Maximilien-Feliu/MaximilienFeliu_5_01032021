@@ -19,18 +19,21 @@ html, body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
   font-weight: 300;
-  height: 100%;
 }
 
 main {
   width: 85%;
   margin: auto;
+  margin-top: 0px;
 }
 
 .shadow {
@@ -457,6 +460,11 @@ footer h2 {
   margin-top: 1em;
 }
 
+#home_welcome .btn:hover {
+  opacity: 80%;
+  color: white;
+}
+
 #products {
   margin-top: 10em;
   padding-bottom: 10em;
@@ -664,10 +672,12 @@ footer h2 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.678);
   visibility: hidden;
+  opacity: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: 1s;
 }
 
 @keyframes numberAppear {

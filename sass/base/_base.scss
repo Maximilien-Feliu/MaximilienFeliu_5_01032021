@@ -2,18 +2,21 @@ html, body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: $normal-size;
     font-weight: $normal-weight;
-    height: 100%; 
 }
 
 main {
     width: $almost-full;
     margin: auto;
+    margin-top: 0px;
 }
 
 .shadow{

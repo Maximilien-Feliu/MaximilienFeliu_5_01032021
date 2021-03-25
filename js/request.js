@@ -7,7 +7,7 @@ function getHttpRequest (method, url, boolean, productId = null, datas = null) {
                 resolve(JSON.parse(this.responseText));
             
             } else if (this.readyState == XMLHttpRequest.DONE && this.status == 404) {
-                reject(alert('Error 404'));
+                reject(window.location.href = '../html/404page.html');
             }
         };
 
