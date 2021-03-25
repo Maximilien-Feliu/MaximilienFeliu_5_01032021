@@ -11,7 +11,7 @@ class Cart {
         let btnForCart = document.getElementsByClassName('btn_add-cart');
         
         for (let i = 0; i < btnForCart.length; i++) {
-            btnForCart[i].addEventListener('click', () => {
+            btnForCart[i].addEventListener('click', () => {       
                 this.numberInCart();
                 this.numberAppear();
                 product.productsInCart(response);
@@ -59,6 +59,7 @@ class Cart {
                 this.itemPlaceInCart (this.cartItems[i].img, this.cartItems[i].title, this.cartItems[i].lense, this.cartItems[i].price, this.cartItems[i].totalPrice);
                 this.addItemsNumber ();   
             }
+            this.addTitles ();
         }else {
             this.emptyBasket();
         }
@@ -112,8 +113,22 @@ class Cart {
         itemRmv.innerHTML = 'Supprimer';
         itemPrice.innerHTML = priceOne + ' &euro;'; 
         itemPriceTotal.innerHTML = priceTotal + ' &euro;';
-
     }
+
+    // add P.U and P.Total
+    addTitles () {
+        let itemPriceTitle = document.createElement('h3');
+        let itemPriceTotalTitle = document.createElement('h3');
+
+        // create a title only for the first card
+        let divPriceTitle = document.getElementsByClassName('item_price')[0];
+        let divPriceTotalTitle = document.getElementsByClassName('item_price--total')[0];
+   
+        divPriceTitle.insertAdjacentElement('afterbegin', itemPriceTitle).className = 'item_price_title';
+        itemPriceTitle.innerHTML = 'P.U'
+        divPriceTotalTitle.insertAdjacentElement('afterbegin', itemPriceTotalTitle).className = 'item_price--total_title';
+        itemPriceTotalTitle.innerHTML = 'P.Total';
+    } 
 
     // set the total amount in cart
     totalPrice () {

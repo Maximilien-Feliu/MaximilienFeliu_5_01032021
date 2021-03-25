@@ -40,15 +40,12 @@ class Cards {
             //Here enter what you whant to loop in htppRequest
             for (let i = 0; i < response.length; i++) {
                 this.createCard(selectedId, response[i].imageUrl, response[i].name, response[i].description, response[i].price, imgAlt, linkHref + response[i]._id);
-
             }    
             
         }else {
-
             this.createCard(selectedId, response.imageUrl, response.name, response.description, response.price, imgAlt, linkHref + response._id);
             this.cardById();
             this.addLensesToCard(response);
-
         } 
 
     }

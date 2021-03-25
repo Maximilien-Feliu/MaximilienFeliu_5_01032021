@@ -19,19 +19,8 @@
 }
 
 #products {
-    margin-top: 15em;
-
-}
-
-.to_reveal {
-    opacity: 0;
-    transform: translateY(-30px);
-}
-
-.to_reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: 1s cubic-bezier(.5, 0, .2, .9);
+    margin-top: 10em; 
+    padding-bottom: 10em;
 }
 
 .title_slides {
@@ -49,6 +38,7 @@
     background-color: #f3e8f094;
     margin-right: 1em;
     margin-left: 1em;
+    border: none;
     display: none;
 
     &:hover {

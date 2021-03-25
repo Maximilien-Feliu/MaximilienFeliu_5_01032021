@@ -1,5 +1,7 @@
 html, body {
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -28,4 +30,15 @@ strong {
 
 .primary {
     color: $primary-color;
+}
+
+.to_reveal {
+    opacity: 0;
+    transform: translateY(-30px); 
+}
+
+.to_reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(.5, 0, .2, .9);
 }

@@ -5,6 +5,10 @@ class Products {
         let lensesSelect = document.getElementById('lenses_select');
         let selectOption = lensesSelect.options[lensesSelect.selectedIndex].textContent;
 
+        if (selectOption === '--choisissez votre lentille--') {
+            alert('Veuillez choisir votre lentille d\'objectif avant de continuer votre achat');
+        }
+
         // create an object 'product' for the local storage    
         let product = {
             img: response.imageUrl,
