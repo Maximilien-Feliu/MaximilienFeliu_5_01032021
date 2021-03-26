@@ -3,7 +3,6 @@ let productId = urlParams.get('id');
 
 let card = new Cards; 
 let cart = new Cart;
-let product = new Products;
 
 let httpRequest = getHttpRequest('GET', 'http://localhost:3000/api/cameras/', true, productId);
 
