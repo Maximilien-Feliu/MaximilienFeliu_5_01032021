@@ -4,19 +4,36 @@ footer {
     height: 200px;
     margin-top: 3em;
 
+    @include respond-to(mobile) {
+        height: 130px;
+    }
+
     & h2 {
         margin: 0;
+
+        @include respond-to(mobile) {
+            margin-bottom: .5em;
+        }
     }
 }
 
 .footer_nav_icons {
     @include flex(row, space-between, baseline);
     width: 25em;   
+
+    @include respond-to(mobile) {
+        width: 100%;
+        @include flex(row, space-around, baseline);
+    }
 }
 
 .footer_nav_icons i {
    color: $tertiary-color;
    font-size: $main-title;
+
+   @include respond-to(mobile) {
+    font-size: 23px;
+}
     
    &:hover {
        color: $secondary-color;

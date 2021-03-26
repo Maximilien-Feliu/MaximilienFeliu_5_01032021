@@ -71,7 +71,8 @@ $mobile-landscape: 480px;
     @media only screen and (min-width: $small-desktop) { @content; }
   }
   @if $media == handhelds {
-    @media only screen and (min-width: $handheld) { @content; }
+    @media only screen and (min-width: $handheld) 
+                       and (max-device-width : $handhelds-landscape) { @content; }
   }
   @if $media == handhelds-landscape {
     @media only screen  and (min-device-width : $handheld)

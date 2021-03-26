@@ -6,8 +6,7 @@ class Cart {
     }
 
     //add a Number on the shopping cart icon on every click
-    addToCart (response) {
-       
+    addToCart (response) { 
         let btnForCart = document.getElementsByClassName('btn_add-cart');
         
         for (let i = 0; i < btnForCart.length; i++) {

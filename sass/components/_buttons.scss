@@ -23,16 +23,33 @@ button{
     @include flexCenter(row);
     background: linear-gradient($primary-color, $tertiary-color);
     color: white;
+
 }
 .select_btn {
     @include flex(row, space-between, baseline);
+
+    @include respond-to(mobile) {
+        @include flexCenter(column);
+    }
     
-    .btn {
+    .btn_add-cart {
         margin-right: 1.5em;
         min-width: 150px;
         box-shadow: -2px 2px 4px $tertiary-color,
                     2px -2px 4px $tertiary-color; 
         background: linear-gradient($primary-color, $tertiary-color);
+
+        @media screen and (max-width: $handheld) {
+            margin-right: 1em;
+            min-width: 85px;
+            height: 30px;
+            font-size: 14px;
+            box-shadow: -1px 1px 4px $tertiary-color,
+                        1px -1px 4px $tertiary-color; 
+        }
+        @include respond-to(mobile) {
+            margin-bottom: 1em;
+        }
     }
 }
 .btn_larger {

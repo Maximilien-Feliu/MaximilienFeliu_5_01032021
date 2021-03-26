@@ -21,7 +21,7 @@ class Scroll {
         }
           
         let observer = new IntersectionObserver(intersection, options);
-        document.querySelectorAll('.to_reveal').forEach(function (reveal) {
+        document.querySelectorAll('.to_reveal').forEach(function revealItem(reveal) {
             observer.observe(reveal);
         }); 
     }

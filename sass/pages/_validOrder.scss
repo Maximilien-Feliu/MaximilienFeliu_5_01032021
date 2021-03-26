@@ -2,6 +2,9 @@
     margin-top: 1em;
     font-size: larger;
     padding-bottom: 3em;
+    @include respond-to(mobile) {
+        font-size: $normal-size;
+    }
 }
 
 .title_order_print {
@@ -21,6 +24,11 @@
                 inset 3px 3px 20px black;
     background: radial-gradient($white 50%, $background-color, rgb(114, 114, 114), $primary-color);
 
+    @media screen and (max-width: $handheld) {
+        width: inherit;  
+        margin: 0 auto;
+        height: inherit;
+    }
     h3 {
         line-height: 1.5em;
     }

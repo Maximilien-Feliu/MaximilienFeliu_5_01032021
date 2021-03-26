@@ -43,6 +43,7 @@ class Slides {
                 if (counter > 3) { 
                     counter = 0;
                 }            
+                
         }     
         // backgrounds defile for one url on click
         arrowLeft.addEventListener('click', () => {
@@ -59,5 +60,6 @@ class Slides {
             divSlides.style.backgroundSize = 'cover';
             
         })     
+        console.log(counter);
     }
 }
