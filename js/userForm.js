@@ -29,15 +29,9 @@ class User {
             inputRequired = Array.from(inputRequired);
             e.preventDefault();
 
-            // indacate when an input is empty
             for (let i = 0; i < inputRequired.length; i++) {
-                if (inputRequired[i].value === "") {
-                    inputRequired[i].style.borderColor = 'rgb(211, 0, 0)';   
-                    errorMessage.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
-                }else {
-                    inputRequired[i].style.borderColor = 'inherit'; 
-                }
-            };
+                inputRequired[i].style.borderColor = 'inherit';
+            }
 
             // conditions to validate the form and create the contact object
             switch (false) {
@@ -75,7 +69,14 @@ class User {
                         };               
                         this.objectByOrder(contact);
                     }
-            }
+            }      
+            // indacate when an input is empty
+            for (let i = 0; i < inputRequired.length; i++) {
+                if (inputRequired[i].value === "") {
+                    inputRequired[i].style.borderColor = 'rgb(211, 0, 0)';   
+                    errorMessage.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
+                }
+            };     
         });   
     }
 
