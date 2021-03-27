@@ -16,10 +16,9 @@ function getHttpRequest (method, url, boolean, productId = null, datas = null) {
               
         } else {
             request.open(method, url + productId, boolean);
-        }
-        
+        }      
         request.send(datas);
-    })
+    });
 }
 
 function postHttpRequest (method, url, datas) {
@@ -37,7 +36,7 @@ function postHttpRequest (method, url, datas) {
         request.open(method, url);
         request.setRequestHeader('Content-type', 'application/json');
         request.send(datas);    
-    })
+    });
 }
 
 

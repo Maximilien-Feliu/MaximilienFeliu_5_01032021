@@ -7,23 +7,25 @@ class Slides {
     // backgrounds url and paragraphes defile every 5seconds 
     defileImg () {
         let divSlides = document.getElementsByClassName('head_slides')[0];
-        let counter = 1;
+        let counter = 0;
+
         divSlides.style.background = 'url(../img/slides/img_slide0.webp) no-repeat fixed center';
         divSlides.style.backgroundSize = 'cover';
-
         let titleAppear = document.getElementsByClassName('title_appear0')[0];
-        titleAppear.style.display = 'block';
+        titleAppear.style.display = 'block'; 
+        let interval = setInterval(change, 5000); 
 
-        let arrowLeft = document.getElementsByClassName('fa-arrow-left')[0];
-        let arrowRight = document.getElementsByClassName('fa-arrow-right')[0];
-
-        setInterval(change, 5000); 
-
-        function change() {     
+        // increase the counter for the background url
+        function change() {                    
+                if (counter == 3) { 
+                    counter = 0;
+                }else {
+                    counter++;   
+                } 
                 divSlides.style.background = 'url(../img/slides/img_slide'+ counter + '.webp) no-repeat fixed center';
                 divSlides.style.backgroundSize = 'cover';
 
-                let titleAppear = document.getElementsByClassName('title_appear'+ counter)[0];
+                titleAppear = document.getElementsByClassName('title_appear'+ counter)[0];
                 titleAppear.style.display = 'block';  
 
                 if(counter > 0) { 
@@ -32,34 +34,55 @@ class Slides {
                 }else {
                     let titleRemove = document.getElementsByClassName('title_appear3')[0];
                     titleRemove.style.display = 'none';
-                }
-
-                counter++;   
-
-                if(counter == 4) {
-                    divSlides.style.background = 'url(../img/slides/img_slide3.webp) no-repeat fixed bottom';
-                    divSlides.style.backgroundSize = 'cover';
-                }
-                if (counter > 3) { 
-                    counter = 0;
                 }            
-                
-        }     
-        // backgrounds defile for one url on click
+        } 
+        this.defileImgOnClick(counter, interval, change);    
+    }
+
+    // backgrounds defile for one url on click
+    defileImgOnClick (count, interval, func) {
+        
+        let divSlides = document.getElementsByClassName('head_slides')[0];
+        let arrowLeft = document.getElementsByClassName('fa-arrow-left')[0];
+        let arrowRight = document.getElementsByClassName('fa-arrow-right')[0];
+
+        // shows previous slide
         arrowLeft.addEventListener('click', () => {
-            divSlides.style.background = 'url(../img/slides/img_slide'+ ((counter--) - (counter--)) +'.webp) no-repeat fixed bottom';
+            if (count == 0){
+                let titleRemove = document.getElementsByClassName('title_appear0')[0];
+                titleRemove.style.display = 'none'; 
+                count = 3;
+            }else {
+                count--;
+                let titleRemove = document.getElementsByClassName('title_appear' + (count + 1))[0];
+                titleRemove.style.display = 'none'; 
+                
+            }    
+            clearInterval(interval); 
+            divSlides.style.background = 'url(../img/slides/img_slide'+ count +'.webp) no-repeat fixed bottom';
             divSlides.style.backgroundSize = 'cover';
-            let titleRemove = document.getElementsByClassName('title_appear'+ (counter + 1))[0];
-            titleRemove.style.display = 'none';    
+            let titleAppear = document.getElementsByClassName('title_appear' + count)[0];
+            titleAppear.style.display = 'block';
+            interval = setInterval(func, 5000);              
         });
 
+        // shows next slide
         arrowRight.addEventListener('click', () => {
-            let titleRemove = document.getElementsByClassName('title_appear'+ (counter - 1))[0];
-            titleRemove.style.display = 'none';
-            divSlides.style.background = 'url(../img/slides/img_slide'+ (counter) +'.webp) no-repeat fixed bottom'
+            if (count == 3) {
+                let titleRemove = document.getElementsByClassName('title_appear3')[0];
+                titleRemove.style.display = 'none';
+                count = 0;
+            }else {
+                count++;
+                let titleRemove = document.getElementsByClassName('title_appear'+ (count - 1))[0];
+                titleRemove.style.display = 'none';
+            }
+            clearInterval(interval); 
+            divSlides.style.background = 'url(../img/slides/img_slide'+ (count) +'.webp) no-repeat fixed bottom'
             divSlides.style.backgroundSize = 'cover';
-            
-        })     
-        console.log(counter);
+            let titleAppear = document.getElementsByClassName('title_appear' + count)[0];
+            titleAppear.style.display = 'block';
+            interval = setInterval(func, 5000);    
+        });
     }
 }

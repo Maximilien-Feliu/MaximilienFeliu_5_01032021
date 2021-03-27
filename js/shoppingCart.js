@@ -4,7 +4,6 @@ if (cartItems != null) {
 }
 
 let cart = new Cart(cartItems);
-//let product = new Products;
 let user = new User;
 
 cart.fillCart();

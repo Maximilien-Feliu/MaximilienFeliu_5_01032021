@@ -5,6 +5,7 @@ class ValidOrder {
         this.printOrder();
     }
 
+    // get elements put in localStorage
     getValidOrder () {
 
         let validOrder = JSON.parse(localStorage.getItem('ordered'));
@@ -15,6 +16,7 @@ class ValidOrder {
         orderAmount.innerHTML = validOrder[1];
     }
 
+    // the user can print the order
     printOrder () {
         let printOrder = document.getElementsByClassName('print_order')[0];
         printOrder.addEventListener('click', () => {

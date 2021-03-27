@@ -30,8 +30,7 @@ class Cards {
         newDescriptionContainer.appendChild(newDescription).className = 'product_description';
         newDescription.innerHTML = cardDescription;
         newDescriptionContainer.appendChild(newPrice).className = 'product_price bold';
-        newPrice.innerHTML = cardPrice / 100 + ' &euro;';
-        
+        newPrice.innerHTML = cardPrice / 100 + ' &euro;';        
     }
 
     //fulfill the product card with the elements needed for
@@ -49,7 +48,6 @@ class Cards {
             this.cardById();
             this.addLensesToCard(response);
         } 
-
     }
 
     //Add lenses to the select options
@@ -92,9 +90,7 @@ class Cards {
         newSelect.appendChild(newOption).innerHTML = '--choisissez votre lentille--';  
         newDiv.appendChild(newBtn).className = 'btn btn_add-cart';
         newBtn.innerHTML = 'Ajouter au panier'; 
-
     }
-
 }
 
 

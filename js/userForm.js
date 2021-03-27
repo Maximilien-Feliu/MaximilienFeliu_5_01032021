@@ -29,6 +29,16 @@ class User {
             inputRequired = Array.from(inputRequired);
             e.preventDefault();
 
+            // indacate when an input is empty
+            for (let i = 0; i < inputRequired.length; i++) {
+                if (inputRequired[i].value === "") {
+                    inputRequired[i].style.borderColor = 'rgb(211, 0, 0)';   
+                    errorMessage.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
+                }else {
+                    inputRequired[i].style.borderColor = 'inherit'; 
+                }
+            };
+
             // conditions to validate the form and create the contact object
             switch (false) {
                 case regexpOccidentalNoun.test(firstName.value):
@@ -62,18 +72,10 @@ class User {
                         };
                         contact = { 
                             contact: contact
-                        };
-                        
+                        };               
                         this.objectByOrder(contact);
                     }
             }
-
-            for (let i = 0; i < inputRequired.length; i++) {
-                if (inputRequired[i].value === "") {
-                    inputRequired[i].style.borderColor = 'rgb(211, 0, 0)';   
-                    errorMessage.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
-                };
-            };
         });   
     }
 
@@ -102,6 +104,7 @@ class User {
         });
     }
 
+    // hide the form
     returnBack () {
         let returnBack = document.getElementById('btn_return_back');
         let userFormBackground = document.getElementById('background_shadow');

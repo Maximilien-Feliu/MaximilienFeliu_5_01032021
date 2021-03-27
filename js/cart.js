@@ -14,13 +14,12 @@ class Cart {
                 this.numberInCart();
                 this.numberAppear();
                 this.productsInCart(response);
-            })
-        }
+            });
+        };
     }
 
     //Transform the value to a number then set in localStorage
-    numberInCart() {
-        
+    numberInCart() {     
         let productCount = localStorage.getItem('productInCart');
         let cartIcon = document.getElementsByClassName('header_nav_cart_number')[0];
 
@@ -117,7 +116,6 @@ class Cart {
 
     // object to fill and place in localStorage
     productsInCart (response) {
-
         let lensesSelect = document.getElementById('lenses_select');
         let selectOption = lensesSelect.options[lensesSelect.selectedIndex].textContent;
 
