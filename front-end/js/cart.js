@@ -197,7 +197,7 @@ class Cart {
 
             for (let i = 1; i <= 10; i++) {    
                 newOptions = document.createElement('option'); // create 10 options by items quantity select
-                itemQuantity[c].appendChild(newOptions)[i];
+                itemQuantity[c].appendChild(newOptions)[i]; 
                 newOptions.innerHTML = i;
 
                 if (i == this.cartItems[c].quantity) {
@@ -232,7 +232,6 @@ class Cart {
 
             for (let i = 0; i < btnDelete.length; i++) {
                 btnDelete[i].addEventListener('click', () => {
-                    console.log(this.cartItems);
                     decreaseNumberInCart = decreaseNumberInCart - this.cartItems[i].quantity; // decrease the number of items in cart
                     localStorage.setItem('productInCart', decreaseNumberInCart);
                     
@@ -270,7 +269,7 @@ class Cart {
         emptyBasket.style.fontSize = '20px';
         emptyBasket.style.marginTop = '2em';
         emptyBasket.appendChild(redirection).innerHTML = 'ici';
-        redirection.href = '../index.html';
+        redirection.href = '../../index.html';
         redirection.style.color = 'rgba(189, 101, 29, 0.822)';
         noRecap.style.display = 'none';
     }

@@ -9,7 +9,7 @@ class Slides {
         let divSlides = document.getElementsByClassName('head_slides')[0];
         let counter = 0;
 
-        divSlides.style.background = 'url(../img/slides/img_slide0.webp) no-repeat fixed center';
+        divSlides.style.background = 'url(/front-end/img/slides/img_slide0.webp) no-repeat fixed center';
         divSlides.style.backgroundSize = 'cover';
         let titleAppear = document.getElementsByClassName('title_appear0')[0];
         titleAppear.style.display = 'block'; 
@@ -22,7 +22,7 @@ class Slides {
                 }else {
                     counter++;   
                 } 
-                divSlides.style.background = 'url(../img/slides/img_slide'+ counter + '.webp) no-repeat fixed center';
+                divSlides.style.background = 'url(/front-end/img/slides/img_slide'+ counter + '.webp) no-repeat fixed center';
                 divSlides.style.backgroundSize = 'cover';
 
                 titleAppear = document.getElementsByClassName('title_appear'+ counter)[0];
@@ -59,7 +59,7 @@ class Slides {
                 
             }    
             clearInterval(interval); 
-            divSlides.style.background = 'url(../img/slides/img_slide'+ count +'.webp) no-repeat fixed bottom';
+            divSlides.style.background = 'url(/front-end/img/slides/img_slide'+ count +'.webp) no-repeat fixed bottom';
             divSlides.style.backgroundSize = 'cover';
             let titleAppear = document.getElementsByClassName('title_appear' + count)[0];
             titleAppear.style.display = 'block';
@@ -78,7 +78,7 @@ class Slides {
                 titleRemove.style.display = 'none';
             }
             clearInterval(interval); 
-            divSlides.style.background = 'url(../img/slides/img_slide'+ (count) +'.webp) no-repeat fixed bottom'
+            divSlides.style.background = 'url(/front-end/img/slides/img_slide'+ (count) +'.webp) no-repeat fixed bottom'
             divSlides.style.backgroundSize = 'cover';
             let titleAppear = document.getElementsByClassName('title_appear' + count)[0];
             titleAppear.style.display = 'block';
