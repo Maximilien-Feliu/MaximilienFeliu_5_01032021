@@ -19,15 +19,25 @@ class User {
 
         order.addEventListener('click', (e) => { // get the values from the form (id='order-form')
             let inputRequired = document.getElementsByTagName('input'); 
-            let errorMessage = document.getElementById('input_error');
             let firstName = document.getElementById('user_firstName');
             let lastName = document.getElementById('user_lastName');
             let address = document.getElementById('user_address');
             let city = document.getElementById('user_city');
             let email = document.getElementById('user_email');
 
+            let inputError = document.getElementById('input_error');
+            let firstNameError = document.getElementById('error_firstName');
+            let lastNameError = document.getElementById('error_lastName');
+            let cityError = document.getElementById('error_city');
+            let emailError = document.getElementById('error_email');
+
             inputRequired = Array.from(inputRequired);
             e.preventDefault();
+
+            firstNameError.style.display = 'none';
+            lastNameError.style.display = 'none';
+            cityError.style.display = 'none';
+            emailError.style.display = 'none';
 
             for (let i = 0; i < inputRequired.length; i++) {
                 inputRequired[i].style.borderColor = 'inherit';
@@ -37,22 +47,26 @@ class User {
             switch (false) {
                 case regexpOccidentalNoun.test(firstName.value):
                     firstName.style.borderColor = 'rgb(211, 0, 0)';
-                    errorMessage.innerHTML = 'Prénom invalide.';
+                    firstNameError.style.display = 'block';
+                    firstNameError.innerHTML = 'Prénom invalide.';
                     break;
     
                 case regexpOccidentalNoun.test(lastName.value):
                     lastName.style.borderColor = 'rgb(211, 0, 0)';
-                    errorMessage.innerHTML = 'Nom invalide.';
+                    lastNameError.style.display = 'block';
+                    lastNameError.innerHTML = 'Nom invalide.';
                     break;
     
                 case regexpOccidentalCity.test(city.value):
                     city.style.borderColor = 'rgb(211, 0, 0)';
-                    errorMessage.innerHTML = 'Nom de ville invalide.';
+                    cityError.style.display = 'block';
+                    cityError.innerHTML = 'Nom de ville invalide.';
                     break;
     
                 case regexpEmail.test(email.value):
                     email.style.borderColor = 'rgb(211, 0, 0)';
-                    errorMessage.innerHTML = 'Email invalide.';
+                    emailError.style.display = 'block';
+                    emailError.innerHTML = 'Email invalide.';
                     break;
     
                 default:
@@ -68,13 +82,15 @@ class User {
                             contact: contact
                         };               
                         this.objectByOrder(contact);
+                        errorMessage.style.display = 'none';
                     }
-            }      
+            }    
+        
             // indacate when an input is empty
             for (let i = 0; i < inputRequired.length; i++) {
                 if (inputRequired[i].value === "") {
                     inputRequired[i].style.borderColor = 'rgb(211, 0, 0)';   
-                    errorMessage.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
+                    inputError.innerHTML = 'Veuillez renseigner tous les champs obligatoires.'
                 }
             };     
         });   

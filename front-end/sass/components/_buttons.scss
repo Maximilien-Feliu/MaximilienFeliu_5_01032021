@@ -15,7 +15,6 @@ button{
     
     &:focus{
         outline: none;
-
     }
 }
 .btn {
@@ -27,13 +26,14 @@ button{
 }
 .select_btn {
     @include flex(row, space-between, baseline);
+    width: 100%;
 
     @include respond-to(mobile) {
         @include flexCenter(column);
     }
     
     .btn_add-cart {
-        margin-right: 1.5em;
+        margin-right: 15px;
         min-width: 150px;
         box-shadow: -2px 2px 4px $tertiary-color,
                     2px -2px 4px $tertiary-color; 

@@ -6,7 +6,7 @@ function getHttpRequest (method, url, boolean, productId = null, datas = null) {
             if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
                 resolve(JSON.parse(this.responseText));
             
-            } else if (this.readyState == XMLHttpRequest.DONE && this.status == 404) {
+            } else if (this.readyState == XMLHttpRequest.DONE && this.status == 404 || this.status == 500) {
                 reject(window.location.href = '../html/404page.html');
             }
         };

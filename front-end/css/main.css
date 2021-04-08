@@ -79,7 +79,7 @@ strong {
   flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   #products_container {
     display: flex;
     justify-content: center;
@@ -122,7 +122,7 @@ strong {
   object-fit: cover;
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .product_card {
     max-width: 230px;
   }
@@ -151,7 +151,7 @@ strong {
   margin-bottom: 6em;
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .product_card--id {
     max-width: 100%;
     font-size: 16px;
@@ -176,7 +176,7 @@ strong {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .product_card--id p {
     font-size: 14px;
   }
@@ -194,7 +194,7 @@ strong {
   margin: 0;
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .product_card--id img {
     width: 285px;
     height: 250px;
@@ -214,7 +214,7 @@ strong {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: space-between;
+  align-items: flex-start;
 }
 
 .product_card--id #lenses_select {
@@ -313,6 +313,7 @@ button:focus {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  width: 100%;
 }
 
 @media only screen and (max-width: 640px) {
@@ -325,7 +326,7 @@ button:focus {
 }
 
 .select_btn .btn_add-cart {
-  margin-right: 1.5em;
+  margin-right: 15px;
   min-width: 150px;
   box-shadow: -2px 2px 4px #8721ca, 2px -2px 4px #8721ca;
   background: linear-gradient(rgba(189, 101, 29, 0.822), #8721ca);
@@ -413,6 +414,10 @@ button:focus {
 
 #order_form #cart_btns {
   margin-top: 1.5em;
+}
+
+#error_firstName, #error_lastName, #error_city, #error_email {
+  color: #d30000;
 }
 
 li {

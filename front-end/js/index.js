@@ -6,6 +6,6 @@ let scroll = new Scroll;
 let httpRequest = getHttpRequest('GET', 'http://localhost:3000/api/cameras/', true);
 
 httpRequest.then((response) => {
-    card.fillCard('products_container', response, 'image d\'une caméra vintage', '/front-end/html/product.html?id=');
+    card.fillCard('products_container', response, 'image de la caméra vintage ', '/front-end/html/product.html?id=');
 });
 

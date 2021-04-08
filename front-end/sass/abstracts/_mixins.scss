@@ -72,11 +72,11 @@ $mobile-landscape: 480px;
   }
   @if $media == handhelds {
     @media only screen and (min-width: $handheld) 
-                       and (max-device-width : $handhelds-landscape) { @content; }
+                       and (max-width : $handhelds-landscape) { @content; }
   }
   @if $media == handhelds-landscape {
     @media only screen  and (min-device-width : $handheld)
-                        and (max-device-width : $handhelds-landscape)
+                        and (max-width : $handhelds-landscape)
                         and (orientation : landscape) { @content; }
   }
   @if $media == mobile {

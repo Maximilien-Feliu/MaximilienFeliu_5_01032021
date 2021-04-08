@@ -40,3 +40,7 @@
         margin-top: 1.5em; 
     }
 }
+
+#error_firstName, #error_lastName, #error_city, #error_email {
+    color: rgb(211, 0, 0);
+}

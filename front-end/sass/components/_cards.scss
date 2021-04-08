@@ -107,7 +107,7 @@
             .product_description_container {
                 margin-left: 1em;
                 margin-top: 1em;
-                @include flex(column, flex-start, space-between);
+                @include flex(column, flex-start, flex-start);
             } 
             #lenses_select {
                 width: 50%;
